@@ -1,24 +1,45 @@
 //
-//  SystemService.m
-//  NetAsistant
+//  TodayViewController.m
+//  Extension
 //
 //  Created by Zzy on 9/20/14.
 //  Copyright (c) 2014 Zzy. All rights reserved.
 //
 
-#import "NetworkFlowService.h"
-#import "NetworkFlow.h"
+#import "TodayViewController.h"
+#import <NotificationCenter/NotificationCenter.h>
 #include <ifaddrs.h>
 #include <sys/socket.h>
 #include <net/if.h>
 
-@implementation NetworkFlowService
+@interface TodayViewController () <NCWidgetProviding>
+@property (weak, nonatomic) IBOutlet UILabel *flowLabel;
 
-+ (NetworkFlow *)networkFlow
+@end
+
+@implementation TodayViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler
+{
+    completionHandler(NCUpdateResultNewData);
+    [self updateNetworkFlow];
+}
+
+- (void)updateNetworkFlow
 {
     struct ifaddrs *ifa_list = 0, *ifa;
     if (getifaddrs(&ifa_list) == -1) {
-        return nil;
+        return;
     }
     
     uint32_t iBytes     = 0;
@@ -62,8 +83,21 @@
     }
     freeifaddrs(ifa_list);
     
-    NetworkFlow *networkFlow = [[NetworkFlow alloc] initWithAllFlow:allFlow allInFlow:iBytes allOutFlow:oBytes wifiFlow:wifiIBytes wifiInFlow:wifiIBytes wifiOutFlow:wifiOBytes wwanFlow:wwanFlow wwanInFlow:wwanIBytes wwanOutFlow:wwanOBytes];
-    return networkFlow;
+    NSString *flowStr = [[NSString alloc] initWithFormat:@"剩余：%@  套餐：%@", [self flowValueToStr:wwanFlow], @"300MB"];
+    self.flowLabel.text = flowStr;
+}
+
+- (NSString *)flowValueToStr:(NSInteger)bytes
+{
+    if (bytes < 1024) {
+        return [NSString stringWithFormat:@"%ldB", (long)bytes];
+    } else if (bytes >= 1024 && bytes < 1024 * 1024) {
+        return [NSString stringWithFormat:@"%.1fKB", (double)bytes / 1024];
+    } else if (bytes >= 1024 * 1024 && bytes < 1024 * 1024 * 1024) {
+        return [NSString stringWithFormat:@"%.2fMB", (double)bytes / (1024 * 1024)];
+    } else {
+        return [NSString stringWithFormat:@"%.3fGB", (double)bytes / (1024 * 1024 * 1024)];
+    }
 }
 
 @end

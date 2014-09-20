@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A451CE919CD6DE100F21478 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A451CE819CD6DE100F21478 /* NotificationCenter.framework */; };
+		5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A451CEE19CD6DE100F21478 /* TodayViewController.m */; };
+		5A451CF119CD6DE100F21478 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A451CF019CD6DE100F21478 /* MainInterface.storyboard */; };
+		5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A451CE719CD6DE100F21478 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5AED302719CD47F70098DC57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302619CD47F70098DC57 /* main.m */; };
 		5AED302A19CD47F70098DC57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302919CD47F70098DC57 /* AppDelegate.m */; };
 		5AED302D19CD47F70098DC57 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302C19CD47F70098DC57 /* MainViewController.m */; };
@@ -20,6 +24,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5A451CF219CD6DE100F21478 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AED301919CD47F70098DC57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A451CE619CD6DE100F21478;
+			remoteInfo = Extension;
+		};
+		5A451CF519CD6DE100F21478 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AED301919CD47F70098DC57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A451CE619CD6DE100F21478;
+			remoteInfo = Extension;
+		};
 		5AED303B19CD47F70098DC57 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AED301919CD47F70098DC57 /* Project object */;
@@ -29,7 +47,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5A451CFA19CD6DE100F21478 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5A451CE719CD6DE100F21478 /* Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A451CE819CD6DE100F21478 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5A451CEC19CD6DE100F21478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A451CED19CD6DE100F21478 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		5A451CEE19CD6DE100F21478 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		5A451CF019CD6DE100F21478 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		5AED302119CD47F70098DC57 /* NetAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AED302519CD47F70098DC57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AED302619CD47F70098DC57 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,6 +92,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A451CE419CD6DE100F21478 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A451CE919CD6DE100F21478 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AED301E19CD47F70098DC57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,9 +117,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A451CEA19CD6DE100F21478 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A451CED19CD6DE100F21478 /* TodayViewController.h */,
+				5A451CEE19CD6DE100F21478 /* TodayViewController.m */,
+				5A451CF019CD6DE100F21478 /* MainInterface.storyboard */,
+				5A451CEB19CD6DE100F21478 /* Supporting Files */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5A451CEB19CD6DE100F21478 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A451CEC19CD6DE100F21478 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5AED301819CD47F70098DC57 = {
 			isa = PBXGroup;
 			children = (
+				5A451CEA19CD6DE100F21478 /* Extension */,
 				5AED308B19CD4BC40098DC57 /* Frameworks */,
 				5AED302319CD47F70098DC57 /* NetAsistant */,
 				5AED303D19CD47F70098DC57 /* NetAsistantTests */,
@@ -86,6 +152,7 @@
 			children = (
 				5AED302119CD47F70098DC57 /* NetAsistant.app */,
 				5AED303A19CD47F70098DC57 /* NetAsistantTests.xctest */,
+				5A451CE719CD6DE100F21478 /* Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +233,7 @@
 			children = (
 				5AED308C19CD4CF80098DC57 /* CoreGraphics.framework */,
 				5AED305619CD4B6D0098DC57 /* Foundation.framework */,
+				5A451CE819CD6DE100F21478 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +241,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A451CE619CD6DE100F21478 /* Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A451CF919CD6DE100F21478 /* Build configuration list for PBXNativeTarget "Extension" */;
+			buildPhases = (
+				5A451CE319CD6DE100F21478 /* Sources */,
+				5A451CE419CD6DE100F21478 /* Frameworks */,
+				5A451CE519CD6DE100F21478 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension;
+			productName = Extension;
+			productReference = 5A451CE719CD6DE100F21478 /* Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5AED302019CD47F70098DC57 /* NetAsistant */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AED304419CD47F70098DC57 /* Build configuration list for PBXNativeTarget "NetAsistant" */;
@@ -180,10 +265,13 @@
 				5AED301D19CD47F70098DC57 /* Sources */,
 				5AED301E19CD47F70098DC57 /* Frameworks */,
 				5AED301F19CD47F70098DC57 /* Resources */,
+				5A451CFA19CD6DE100F21478 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5A451CF319CD6DE100F21478 /* PBXTargetDependency */,
+				5A451CF619CD6DE100F21478 /* PBXTargetDependency */,
 			);
 			name = NetAsistant;
 			productName = NetAsistant;
@@ -217,6 +305,9 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Zzy;
 				TargetAttributes = {
+					5A451CE619CD6DE100F21478 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
 					5AED302019CD47F70098DC57 = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
@@ -241,11 +332,20 @@
 			targets = (
 				5AED302019CD47F70098DC57 /* NetAsistant */,
 				5AED303919CD47F70098DC57 /* NetAsistantTests */,
+				5A451CE619CD6DE100F21478 /* Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A451CE519CD6DE100F21478 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A451CF119CD6DE100F21478 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AED301F19CD47F70098DC57 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,6 +366,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A451CE319CD6DE100F21478 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AED301D19CD47F70098DC57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +398,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5A451CF319CD6DE100F21478 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A451CE619CD6DE100F21478 /* Extension */;
+			targetProxy = 5A451CF219CD6DE100F21478 /* PBXContainerItemProxy */;
+		};
+		5A451CF619CD6DE100F21478 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A451CE619CD6DE100F21478 /* Extension */;
+			targetProxy = 5A451CF519CD6DE100F21478 /* PBXContainerItemProxy */;
+		};
 		5AED303C19CD47F70098DC57 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5AED302019CD47F70098DC57 /* NetAsistant */;
@@ -317,6 +435,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5A451CF719CD6DE100F21478 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5A451CF819CD6DE100F21478 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		5AED304219CD47F70098DC57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -450,6 +592,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A451CF919CD6DE100F21478 /* Build configuration list for PBXNativeTarget "Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A451CF719CD6DE100F21478 /* Debug */,
+				5A451CF819CD6DE100F21478 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		5AED301C19CD47F70098DC57 /* Build configuration list for PBXProject "NetAsistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

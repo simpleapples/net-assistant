@@ -42,7 +42,7 @@
 - (NSString *)flowValueToStr:(NSInteger)bytes
 {
     if (bytes < 1024) {
-        return [NSString stringWithFormat:@"%dB", bytes];
+        return [NSString stringWithFormat:@"%ldB", (long)bytes];
     } else if (bytes >= 1024 && bytes < 1024 * 1024) {
         return [NSString stringWithFormat:@"%.1fKB", (double)bytes / 1024];
     } else if (bytes >= 1024 * 1024 && bytes < 1024 * 1024 * 1024) {
