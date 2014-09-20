@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AED302719CD47F70098DC57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302619CD47F70098DC57 /* main.m */; };
+		5AED302A19CD47F70098DC57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302919CD47F70098DC57 /* AppDelegate.m */; };
+		5AED302D19CD47F70098DC57 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302C19CD47F70098DC57 /* MainViewController.m */; };
+		5AED303019CD47F70098DC57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AED302E19CD47F70098DC57 /* Main.storyboard */; };
+		5AED303219CD47F70098DC57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AED303119CD47F70098DC57 /* Images.xcassets */; };
+		5AED303519CD47F70098DC57 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AED303319CD47F70098DC57 /* LaunchScreen.xib */; };
+		5AED304119CD47F70098DC57 /* NetAsistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED304019CD47F70098DC57 /* NetAsistantTests.m */; };
+		5AED304E19CD49950098DC57 /* GlobalHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED304D19CD49950098DC57 /* GlobalHolder.m */; };
+		5AED305119CD49F10098DC57 /* NetworkFlowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED305019CD49F10098DC57 /* NetworkFlowService.m */; };
+		5AED305519CD4A4E0098DC57 /* NetworkFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED305419CD4A4E0098DC57 /* NetworkFlow.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AED303B19CD47F70098DC57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AED301919CD47F70098DC57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AED302019CD47F70098DC57;
+			remoteInfo = NetAsistant;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5AED302119CD47F70098DC57 /* NetAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AED302519CD47F70098DC57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AED302619CD47F70098DC57 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5AED302819CD47F70098DC57 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5AED302919CD47F70098DC57 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5AED302B19CD47F70098DC57 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		5AED302C19CD47F70098DC57 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		5AED302F19CD47F70098DC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AED303119CD47F70098DC57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5AED303419CD47F70098DC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5AED303A19CD47F70098DC57 /* NetAsistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetAsistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AED303F19CD47F70098DC57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AED304019CD47F70098DC57 /* NetAsistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetAsistantTests.m; sourceTree = "<group>"; };
+		5AED304C19CD49950098DC57 /* GlobalHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalHolder.h; sourceTree = "<group>"; };
+		5AED304D19CD49950098DC57 /* GlobalHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalHolder.m; sourceTree = "<group>"; };
+		5AED304F19CD49F10098DC57 /* NetworkFlowService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFlowService.h; sourceTree = "<group>"; };
+		5AED305019CD49F10098DC57 /* NetworkFlowService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFlowService.m; sourceTree = "<group>"; };
+		5AED305319CD4A4E0098DC57 /* NetworkFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFlow.h; sourceTree = "<group>"; };
+		5AED305419CD4A4E0098DC57 /* NetworkFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFlow.m; sourceTree = "<group>"; };
+		5AED305619CD4B6D0098DC57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5AED308C19CD4CF80098DC57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AED301E19CD47F70098DC57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AED303719CD47F70098DC57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AED301819CD47F70098DC57 = {
+			isa = PBXGroup;
+			children = (
+				5AED308B19CD4BC40098DC57 /* Frameworks */,
+				5AED302319CD47F70098DC57 /* NetAsistant */,
+				5AED303D19CD47F70098DC57 /* NetAsistantTests */,
+				5AED302219CD47F70098DC57 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AED302219CD47F70098DC57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AED302119CD47F70098DC57 /* NetAsistant.app */,
+				5AED303A19CD47F70098DC57 /* NetAsistantTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AED302319CD47F70098DC57 /* NetAsistant */ = {
+			isa = PBXGroup;
+			children = (
+				5AED305219CD4A3E0098DC57 /* Model */,
+				5AED304B19CD497D0098DC57 /* Service */,
+				5AED304A19CD49750098DC57 /* Controller */,
+				5AED302819CD47F70098DC57 /* AppDelegate.h */,
+				5AED302919CD47F70098DC57 /* AppDelegate.m */,
+				5AED302E19CD47F70098DC57 /* Main.storyboard */,
+				5AED303119CD47F70098DC57 /* Images.xcassets */,
+				5AED303319CD47F70098DC57 /* LaunchScreen.xib */,
+				5AED302419CD47F70098DC57 /* Supporting Files */,
+			);
+			path = NetAsistant;
+			sourceTree = "<group>";
+		};
+		5AED302419CD47F70098DC57 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AED302519CD47F70098DC57 /* Info.plist */,
+				5AED302619CD47F70098DC57 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AED303D19CD47F70098DC57 /* NetAsistantTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AED304019CD47F70098DC57 /* NetAsistantTests.m */,
+				5AED303E19CD47F70098DC57 /* Supporting Files */,
+			);
+			path = NetAsistantTests;
+			sourceTree = "<group>";
+		};
+		5AED303E19CD47F70098DC57 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AED303F19CD47F70098DC57 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AED304A19CD49750098DC57 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5AED302B19CD47F70098DC57 /* MainViewController.h */,
+				5AED302C19CD47F70098DC57 /* MainViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5AED304B19CD497D0098DC57 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5AED304C19CD49950098DC57 /* GlobalHolder.h */,
+				5AED304D19CD49950098DC57 /* GlobalHolder.m */,
+				5AED304F19CD49F10098DC57 /* NetworkFlowService.h */,
+				5AED305019CD49F10098DC57 /* NetworkFlowService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		5AED305219CD4A3E0098DC57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AED305319CD4A4E0098DC57 /* NetworkFlow.h */,
+				5AED305419CD4A4E0098DC57 /* NetworkFlow.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5AED308B19CD4BC40098DC57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AED308C19CD4CF80098DC57 /* CoreGraphics.framework */,
+				5AED305619CD4B6D0098DC57 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AED302019CD47F70098DC57 /* NetAsistant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AED304419CD47F70098DC57 /* Build configuration list for PBXNativeTarget "NetAsistant" */;
+			buildPhases = (
+				5AED301D19CD47F70098DC57 /* Sources */,
+				5AED301E19CD47F70098DC57 /* Frameworks */,
+				5AED301F19CD47F70098DC57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetAsistant;
+			productName = NetAsistant;
+			productReference = 5AED302119CD47F70098DC57 /* NetAsistant.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AED303919CD47F70098DC57 /* NetAsistantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AED304719CD47F70098DC57 /* Build configuration list for PBXNativeTarget "NetAsistantTests" */;
+			buildPhases = (
+				5AED303619CD47F70098DC57 /* Sources */,
+				5AED303719CD47F70098DC57 /* Frameworks */,
+				5AED303819CD47F70098DC57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AED303C19CD47F70098DC57 /* PBXTargetDependency */,
+			);
+			name = NetAsistantTests;
+			productName = NetAsistantTests;
+			productReference = 5AED303A19CD47F70098DC57 /* NetAsistantTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AED301919CD47F70098DC57 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Zzy;
+				TargetAttributes = {
+					5AED302019CD47F70098DC57 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					5AED303919CD47F70098DC57 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 5AED302019CD47F70098DC57;
+					};
+				};
+			};
+			buildConfigurationList = 5AED301C19CD47F70098DC57 /* Build configuration list for PBXProject "NetAsistant" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AED301819CD47F70098DC57;
+			productRefGroup = 5AED302219CD47F70098DC57 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AED302019CD47F70098DC57 /* NetAsistant */,
+				5AED303919CD47F70098DC57 /* NetAsistantTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AED301F19CD47F70098DC57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AED303019CD47F70098DC57 /* Main.storyboard in Resources */,
+				5AED303519CD47F70098DC57 /* LaunchScreen.xib in Resources */,
+				5AED303219CD47F70098DC57 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AED303819CD47F70098DC57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AED301D19CD47F70098DC57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AED305119CD49F10098DC57 /* NetworkFlowService.m in Sources */,
+				5AED304E19CD49950098DC57 /* GlobalHolder.m in Sources */,
+				5AED305519CD4A4E0098DC57 /* NetworkFlow.m in Sources */,
+				5AED302D19CD47F70098DC57 /* MainViewController.m in Sources */,
+				5AED302A19CD47F70098DC57 /* AppDelegate.m in Sources */,
+				5AED302719CD47F70098DC57 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AED303619CD47F70098DC57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AED304119CD47F70098DC57 /* NetAsistantTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AED303C19CD47F70098DC57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AED302019CD47F70098DC57 /* NetAsistant */;
+			targetProxy = 5AED303B19CD47F70098DC57 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AED302E19CD47F70098DC57 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AED302F19CD47F70098DC57 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5AED303319CD47F70098DC57 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AED303419CD47F70098DC57 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AED304219CD47F70098DC57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5AED304319CD47F70098DC57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AED304519CD47F70098DC57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NetAsistant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5AED304619CD47F70098DC57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NetAsistant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5AED304819CD47F70098DC57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NetAsistantTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetAsistant.app/NetAsistant";
+			};
+			name = Debug;
+		};
+		5AED304919CD47F70098DC57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NetAsistantTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetAsistant.app/NetAsistant";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AED301C19CD47F70098DC57 /* Build configuration list for PBXProject "NetAsistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AED304219CD47F70098DC57 /* Debug */,
+				5AED304319CD47F70098DC57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AED304419CD47F70098DC57 /* Build configuration list for PBXNativeTarget "NetAsistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AED304519CD47F70098DC57 /* Debug */,
+				5AED304619CD47F70098DC57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AED304719CD47F70098DC57 /* Build configuration list for PBXNativeTarget "NetAsistantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AED304819CD47F70098DC57 /* Debug */,
+				5AED304919CD47F70098DC57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AED301919CD47F70098DC57 /* Project object */;
+}
