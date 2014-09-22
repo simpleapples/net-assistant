@@ -13,8 +13,13 @@
 #include <net/if.h>
 
 @interface TodayViewController () <NCWidgetProviding>
-@property (weak, nonatomic) IBOutlet UILabel *flowLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *usedFlowLabel;
+@property (weak, nonatomic) IBOutlet UILabel *limitFlowLabel;
+@property (weak, nonatomic) IBOutlet UIButton *modifyButton;
+@property (nonatomic) NSInteger limitFlow;
+@property (nonatomic) NSInteger lastFlow;
+@property (nonatomic) NSInteger offsetFlow;
+@property (strong, nonatomic) NSDate *lastDate;
 @end
 
 @implementation TodayViewController
@@ -22,6 +27,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self recoverFromFile];
+    if (self.limitFlow == 0) {
+        self.modifyButton.hidden = NO;
+        self.usedFlowLabel.hidden = YES;
+        self.limitFlowLabel.hidden = YES;
+    } else {
+        self.modifyButton.hidden = YES;
+        self.usedFlowLabel.hidden = NO;
+        self.limitFlowLabel.hidden = NO;
+    }
+    self.modifyButton.layer.cornerRadius = 5.0f;
+    self.modifyButton.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.modifyButton.layer.borderWidth = 1.0f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,6 +50,13 @@
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler
 {
     completionHandler(NCUpdateResultNewData);
+    NSDate *nowDate = [NSDate date];
+    if (self.limitFlow <= 0) {
+        [self.modifyButton setTitle:@"点击输入套餐" forState:UIControlStateNormal];
+    } else if ([self monthWithDate:nowDate] > [self monthWithDate:self.lastDate]
+        && [nowDate timeIntervalSince1970] > [self.lastDate timeIntervalSince1970]) {
+        [self.modifyButton setTitle:@"点击校准流量" forState:UIControlStateNormal];
+    }
     [self updateNetworkFlow];
 }
 
@@ -83,8 +108,10 @@
     }
     freeifaddrs(ifa_list);
     
-    NSString *flowStr = [[NSString alloc] initWithFormat:@"剩余：%@  套餐：%@", [self flowValueToStr:wwanFlow], @"300MB"];
-    self.flowLabel.text = flowStr;
+    NSInteger usedFlow = wwanFlow - self.lastFlow + self.offsetFlow;
+    self.usedFlowLabel.text = [NSString stringWithFormat:@"已用: %@", [self flowValueToStr:usedFlow]];
+    self.limitFlowLabel.text = [NSString stringWithFormat:@"套餐: %@", [self flowValueToStr:self.limitFlow]];
+    [self backupToFile];
 }
 
 - (NSString *)flowValueToStr:(NSInteger)bytes
@@ -98,6 +125,37 @@
     } else {
         return [NSString stringWithFormat:@"%.3fGB", (double)bytes / (1024 * 1024 * 1024)];
     }
+}
+
+- (void)backupToFile
+{
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
+    [userDefaults setInteger:self.limitFlow forKey:@"limitFlow"];
+    [userDefaults setInteger:self.lastFlow forKey:@"lastFlow"];
+    [userDefaults setInteger:self.offsetFlow forKey:@"offsetFlow"];
+    [userDefaults setObject:self.lastDate forKey:@"lastDate"];
+    [userDefaults synchronize];
+}
+
+- (void)recoverFromFile
+{
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
+    self.limitFlow = [userDefaults integerForKey:@"limitFlow"];
+    self.lastFlow = [userDefaults integerForKey:@"lastFlow"];
+    self.offsetFlow = [userDefaults integerForKey:@"offsetFlow"];
+    self.lastDate = [userDefaults objectForKey:@"lastDate"];
+}
+
+- (NSInteger)monthWithDate:(NSDate *)date
+{
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
+    NSDateComponents *comp = [cal components:NSCalendarUnitMonth fromDate:date];
+    return comp.month;
+}
+
+- (IBAction)onModifyButtonClick:(id)sender
+{
+    [self.extensionContext openURL:[NSURL URLWithString:@"NetAsistant://"] completionHandler:nil];
 }
 
 @end

@@ -68,6 +68,8 @@
 		5A451CED19CD6DE100F21478 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		5A451CEE19CD6DE100F21478 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		5A451CF019CD6DE100F21478 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		5AE39F2119D0134000AEC2F0 /* NetAsistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NetAsistant.entitlements; sourceTree = "<group>"; };
+		5AE39F2219D0139900AEC2F0 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Extension.entitlements; sourceTree = "<group>"; };
 		5AED302119CD47F70098DC57 /* NetAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AED302519CD47F70098DC57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AED302619CD47F70098DC57 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		5A451CEA19CD6DE100F21478 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5AE39F2219D0139900AEC2F0 /* Extension.entitlements */,
 				5A451CED19CD6DE100F21478 /* TodayViewController.h */,
 				5A451CEE19CD6DE100F21478 /* TodayViewController.m */,
 				5A451CF019CD6DE100F21478 /* MainInterface.storyboard */,
@@ -160,6 +163,7 @@
 		5AED302319CD47F70098DC57 /* NetAsistant */ = {
 			isa = PBXGroup;
 			children = (
+				5AE39F2119D0134000AEC2F0 /* NetAsistant.entitlements */,
 				5AED305219CD4A3E0098DC57 /* Model */,
 				5AED304B19CD497D0098DC57 /* Service */,
 				5AED304A19CD49750098DC57 /* Controller */,
@@ -307,9 +311,21 @@
 				TargetAttributes = {
 					5A451CE619CD6DE100F21478 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = LMJACF6T63;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					5AED302019CD47F70098DC57 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = LMJACF6T63;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					5AED303919CD47F70098DC57 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -438,6 +454,11 @@
 		5A451CF719CD6DE100F21478 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -445,6 +466,7 @@
 				INFOPLIST_FILE = Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -452,9 +474,15 @@
 		5A451CF819CD6DE100F21478 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -539,9 +567,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NetAsistant/NetAsistant.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NetAsistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -549,9 +581,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NetAsistant/NetAsistant.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NetAsistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -599,6 +635,7 @@
 				5A451CF819CD6DE100F21478 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AED301C19CD47F70098DC57 /* Build configuration list for PBXProject "NetAsistant" */ = {
 			isa = XCConfigurationList;

@@ -7,11 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+typedef NS_OPTIONS(NSInteger, COLOR_TYPE)
+{
+    COLOR_TYPE_NORMAL = 0,
+    COLOR_TYPE_WARNNING,
+    COLOR_TYPE_ERROR,
+};
 
 @interface GlobalHolder : NSObject
 
-@property (nonatomic) NSInteger flowLimit;
+@property (nonatomic) NSInteger limitFlow;
+@property (nonatomic) NSInteger lastFlow;
+@property (nonatomic) NSInteger offsetFlow;
+@property (strong, nonatomic) NSDate *lastDate;
 
 + (GlobalHolder *)sharedSingleton;
+
+- (UIColor *)colorWithType:(COLOR_TYPE)type;
+- (void)backupToFile;
+- (void)recoverFromFile;
 
 @end
