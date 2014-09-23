@@ -26,6 +26,7 @@
     [super viewDidLoad];
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [UIApplication sharedApplication].statusBarHidden = NO;
  
     self.calibrateButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.calibrateButton.layer.borderWidth = 1.0f;
@@ -82,6 +83,9 @@
             } else {
                 self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_NORMAL];
             }
+        } else {
+            self.flowPercentLabel.text = @"0";
+            self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
         }
         if (limitFlow > 0) {
             self.limitFlowLabel.text = [self flowValueToStr:limitFlow];
