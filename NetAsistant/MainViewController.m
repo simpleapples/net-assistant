@@ -25,8 +25,6 @@
 {
     [super viewDidLoad];
     
-    [[GlobalHolder sharedSingleton] recoverFromFile];
-    
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
  
     self.calibrateButton.layer.borderColor = [[UIColor whiteColor] CGColor];
@@ -36,15 +34,6 @@
     self.modifyButton.layer.borderWidth = 1.0f;
     self.modifyButton.layer.cornerRadius = 5.0f;
     
-    NSDate *nowDate = [NSDate date];
-    NSDate *lastDate = [GlobalHolder sharedSingleton].lastDate;
-    if ([GlobalHolder sharedSingleton].limitFlow <= 0) {
-        [self alertModifyView];
-    } else if ([self monthWithDate:nowDate] > [self monthWithDate:lastDate]
-        && [nowDate timeIntervalSince1970] > [lastDate timeIntervalSince1970]) {
-        [self alertCalibrateView];
-    }
-    
     NSTimer *refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:refreshTimer forMode:NSDefaultRunLoopMode];
 }
@@ -52,6 +41,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [[GlobalHolder sharedSingleton] recoverFromFile];
+    NSDate *nowDate = [NSDate date];
+    NSDate *lastDate = [GlobalHolder sharedSingleton].lastDate;
+    if ([GlobalHolder sharedSingleton].limitFlow <= 0) {
+        [self alertModifyView];
+    } else if ([self monthWithDate:nowDate] > [self monthWithDate:lastDate]
+               && [nowDate timeIntervalSince1970] > [lastDate timeIntervalSince1970]) {
+        [GlobalHolder sharedSingleton].offsetFlow = 0;
+        [GlobalHolder sharedSingleton].lastDate = [NSDate date];
+        [[GlobalHolder sharedSingleton] backupToFile];
+    }
     [self updateFlowData];
 }
 
@@ -125,25 +125,25 @@
     [alertView show];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1 && [alertView textFieldAtIndex:0].text.length > 0) {
+        if (alertView.tag == 1) {
+            [GlobalHolder sharedSingleton].offsetFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1024 * 1024;
+            [GlobalHolder sharedSingleton].lastDate = [NSDate date];
+        } else if (alertView.tag == 2) {
+            [GlobalHolder sharedSingleton].limitFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1024 * 1024;
+        }
+        [self updateFlowData];
+        [[GlobalHolder sharedSingleton] backupToFile];
+    }
+}
+
 - (NSInteger)monthWithDate:(NSDate *)date
 {
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
     NSDateComponents *comp = [cal components:NSCalendarUnitMonth fromDate:date];
     return comp.month;
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        if (alertView.tag == 1) {
-            [GlobalHolder sharedSingleton].offsetFlow = [[alertView textFieldAtIndex:0].text integerValue] * 1024 * 1024;
-            [GlobalHolder sharedSingleton].lastDate = [NSDate date];
-        } else if (alertView.tag == 2) {
-            [GlobalHolder sharedSingleton].limitFlow = [[alertView textFieldAtIndex:0].text integerValue] * 1024 * 1024;
-        }
-        [self updateFlowData];
-        [[GlobalHolder sharedSingleton] backupToFile];
-    }
 }
 
 - (IBAction)onCalibrateButtonClick:(id)sender

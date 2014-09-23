@@ -51,11 +51,11 @@
 {
     completionHandler(NCUpdateResultNewData);
     NSDate *nowDate = [NSDate date];
-    if (self.limitFlow <= 0) {
-        [self.modifyButton setTitle:@"点击输入套餐" forState:UIControlStateNormal];
-    } else if ([self monthWithDate:nowDate] > [self monthWithDate:self.lastDate]
+    if (self.lastDate && [self monthWithDate:nowDate] > [self monthWithDate:self.lastDate]
         && [nowDate timeIntervalSince1970] > [self.lastDate timeIntervalSince1970]) {
-        [self.modifyButton setTitle:@"点击校准流量" forState:UIControlStateNormal];
+        self.offsetFlow = 0;
+        self.lastDate = [NSDate date];
+        [self backupToFile];
     }
     [self updateNetworkFlow];
 }
