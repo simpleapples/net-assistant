@@ -75,7 +75,7 @@
         NSInteger limitFlow = [GlobalHolder sharedSingleton].limitFlow;
         if (remainFlow > 0) {
             NSInteger percent = remainFlow * 100.0f / limitFlow;
-            self.flowPercentLabel.text = [NSString stringWithFormat:@"%d", percent];
+            self.flowPercentLabel.text = [NSString stringWithFormat:@"%ld", (long)percent];
             if (percent < 10) {
                 self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
             } else if (percent < 20) {
