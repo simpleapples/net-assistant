@@ -1,0 +1,21 @@
+
+/* Class = "IBUILabel"; text = "剩余"; ObjectID = "2C6-cQ-HkJ"; */
+"2C6-cQ-HkJ.text" = "剩余";
+
+/* Class = "IBUIButton"; normalTitle = "校准用量"; ObjectID = "5Xv-Vf-7ba"; */
+"5Xv-Vf-7ba.normalTitle" = "校准用量";
+
+/* Class = "IBUIButton"; normalTitle = "修改套餐"; ObjectID = "CmJ-E3-dwk"; */
+"CmJ-E3-dwk.normalTitle" = "修改套餐";
+
+/* Class = "IBUILabel"; text = "%"; ObjectID = "Scd-f7-iU3"; */
+"Scd-f7-iU3.text" = "%";
+
+/* Class = "IBUILabel"; text = "0"; ObjectID = "dCa-nA-6Fx"; */
+"dCa-nA-6Fx.text" = "0";
+
+/* Class = "IBUILabel"; text = "0B"; ObjectID = "fnS-vR-4Bd"; */
+"fnS-vR-4Bd.text" = "0B";
+
+/* Class = "IBUILabel"; text = "0B"; ObjectID = "pwf-6A-GaQ"; */
+"pwf-6A-GaQ.text" = "0B";

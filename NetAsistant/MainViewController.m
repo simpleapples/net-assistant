@@ -10,6 +10,7 @@
 #import "NetworkFlowService.h"
 #import "NetworkFlow.h"
 #import "GlobalHolder.h"
+#import "GADBannerView.h"
 
 @interface MainViewController ()<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *flowPercentLabel;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *limitFlowLabel;
 @property (weak, nonatomic) IBOutlet UIButton *calibrateButton;
 @property (weak, nonatomic) IBOutlet UIButton *modifyButton;
+@property (strong, nonatomic) GADBannerView *adBannerView;
 @end
 
 @implementation MainViewController
@@ -37,6 +39,12 @@
     
     NSTimer *refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:refreshTimer forMode:NSDefaultRunLoopMode];
+    
+    self.adBannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - GAD_SIZE_320x50.height, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height)];
+    self.adBannerView.adUnitID = @"ca-app-pub-2517651978200721/1402882495";
+    self.adBannerView.rootViewController = self;
+    [self.view addSubview:self.adBannerView];
+    [self.adBannerView loadRequest:[GADRequest request]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -47,7 +55,7 @@
     NSDate *lastDate = [GlobalHolder sharedSingleton].lastDate;
     if ([GlobalHolder sharedSingleton].limitFlow <= 0) {
         [self alertModifyView];
-    } else if ([self monthWithDate:nowDate] > [self monthWithDate:lastDate]
+    } else if ([self monthWithDate:nowDate] != [self monthWithDate:lastDate]
                && [nowDate timeIntervalSince1970] > [lastDate timeIntervalSince1970]) {
         [GlobalHolder sharedSingleton].offsetFlow = 0;
         [GlobalHolder sharedSingleton].lastDate = [NSDate date];
@@ -145,7 +153,7 @@
 
 - (NSInteger)monthWithDate:(NSDate *)date
 {
-    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comp = [cal components:NSCalendarUnitMonth fromDate:date];
     return comp.month;
 }

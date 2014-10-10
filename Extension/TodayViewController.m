@@ -51,7 +51,7 @@
 {
     completionHandler(NCUpdateResultNewData);
     NSDate *nowDate = [NSDate date];
-    if (self.lastDate && [self monthWithDate:nowDate] > [self monthWithDate:self.lastDate]
+    if (self.lastDate && [self monthWithDate:nowDate] != [self monthWithDate:self.lastDate]
         && [nowDate timeIntervalSince1970] > [self.lastDate timeIntervalSince1970]) {
         self.offsetFlow = 0;
         self.lastDate = [NSDate date];
@@ -148,12 +148,17 @@
 
 - (NSInteger)monthWithDate:(NSDate *)date
 {
-    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comp = [cal components:NSCalendarUnitMonth fromDate:date];
     return comp.month;
 }
 
 - (IBAction)onModifyButtonClick:(id)sender
+{
+    [self.extensionContext openURL:[NSURL URLWithString:@"NetAsistant://"] completionHandler:nil];
+}
+
+- (IBAction)onBackgroundButtonClick:(id)sender
 {
     [self.extensionContext openURL:[NSURL URLWithString:@"NetAsistant://"] completionHandler:nil];
 }
