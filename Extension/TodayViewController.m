@@ -15,11 +15,16 @@
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UILabel *usedFlowLabel;
 @property (weak, nonatomic) IBOutlet UILabel *limitFlowLabel;
+@property (weak, nonatomic) IBOutlet UILabel *unusedFlowLabel;
 @property (weak, nonatomic) IBOutlet UIButton *modifyButton;
+@property (weak, nonatomic) IBOutlet UIView *progressView;
+@property (weak, nonatomic) IBOutlet UIView *progressHoverView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressWith;
 @property (nonatomic) NSInteger limitFlow;
 @property (nonatomic) NSInteger lastFlow;
 @property (nonatomic) NSInteger offsetFlow;
 @property (strong, nonatomic) NSDate *lastDate;
+@property (strong, nonatomic) NSArray *colorArray;
 @end
 
 @implementation TodayViewController
@@ -40,6 +45,11 @@
     self.modifyButton.layer.cornerRadius = 5.0f;
     self.modifyButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.modifyButton.layer.borderWidth = 1.0f;
+    
+    UIColor *yellow = [UIColor colorWithRed:252 / 255.0f green:176 / 255.0f blue:60 / 255.0f alpha:1.0f];
+    UIColor *red = [UIColor colorWithRed:252 / 255.0f green:91 / 255.0f blue:63 / 255.0f alpha:1.0f];
+    UIColor *green = [UIColor colorWithRed:111 / 255.0f green:213 / 255.0f blue:127 / 255.0f alpha:1.0f];
+    self.colorArray = [[NSArray alloc] initWithObjects:green, yellow, red, nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,8 +119,22 @@
     freeifaddrs(ifa_list);
     
     NSInteger usedFlow = wwanFlow - self.lastFlow + self.offsetFlow;
-    self.usedFlowLabel.text = [NSString stringWithFormat:@"已用: %@", [self flowValueToStr:usedFlow]];
-    self.limitFlowLabel.text = [NSString stringWithFormat:@"套餐: %@", [self flowValueToStr:self.limitFlow]];
+    self.usedFlowLabel.text = [self flowValueToStr:usedFlow];
+    self.limitFlowLabel.text = [NSString stringWithFormat:@"套餐总量: %@", [self flowValueToStr:self.limitFlow]];
+    self.unusedFlowLabel.text = [self flowValueToStr:self.limitFlow - usedFlow];
+    self.progressWith.constant = (CGFloat)usedFlow / (CGFloat)self.limitFlow * self.progressView.frame.size.width;
+    
+    NSInteger percent = (self.limitFlow - usedFlow) * 100.0f / self.limitFlow;
+    if (percent < 10) {
+        self.progressHoverView.backgroundColor = [self.colorArray objectAtIndex:2];
+    } else if (percent < 20) {
+        self.progressHoverView.backgroundColor = [self.colorArray objectAtIndex:1];
+    } else {
+        self.progressHoverView.backgroundColor = [self.colorArray objectAtIndex:0];
+    }
+    
+    [self.view layoutIfNeeded];
+    
     [self backupToFile];
 }
 
@@ -158,7 +182,7 @@
     [self.extensionContext openURL:[NSURL URLWithString:@"NetAsistant://"] completionHandler:nil];
 }
 
-- (IBAction)onBackgroundButtonClick:(id)sender
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.extensionContext openURL:[NSURL URLWithString:@"NetAsistant://"] completionHandler:nil];
 }
