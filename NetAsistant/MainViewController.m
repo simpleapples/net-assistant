@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [UIApplication sharedApplication].statusBarHidden = NO;
  
     self.calibrateButton.layer.borderColor = [[UIColor whiteColor] CGColor];
@@ -50,6 +49,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[GlobalHolder sharedSingleton] recoverFromFile];
     NSDate *nowDate = [NSDate date];
     NSDate *lastDate = [GlobalHolder sharedSingleton].lastDate;

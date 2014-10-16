@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *usedFlowLabel;
 @property (weak, nonatomic) IBOutlet UILabel *limitFlowLabel;
 @property (weak, nonatomic) IBOutlet UILabel *unusedFlowLabel;
-@property (weak, nonatomic) IBOutlet UIButton *modifyButton;
 @property (weak, nonatomic) IBOutlet UIView *progressView;
 @property (weak, nonatomic) IBOutlet UIView *progressHoverView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressWith;
@@ -33,18 +32,6 @@
 {
     [super viewDidLoad];
     [self recoverFromFile];
-    if (self.limitFlow == 0) {
-        self.modifyButton.hidden = NO;
-        self.usedFlowLabel.hidden = YES;
-        self.limitFlowLabel.hidden = YES;
-    } else {
-        self.modifyButton.hidden = YES;
-        self.usedFlowLabel.hidden = NO;
-        self.limitFlowLabel.hidden = NO;
-    }
-    self.modifyButton.layer.cornerRadius = 5.0f;
-    self.modifyButton.layer.borderColor = [[UIColor whiteColor] CGColor];
-    self.modifyButton.layer.borderWidth = 1.0f;
     
     UIColor *yellow = [UIColor colorWithRed:252 / 255.0f green:176 / 255.0f blue:60 / 255.0f alpha:1.0f];
     UIColor *red = [UIColor colorWithRed:252 / 255.0f green:91 / 255.0f blue:63 / 255.0f alpha:1.0f];
