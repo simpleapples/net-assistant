@@ -79,6 +79,9 @@
     NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
     if (networkFlow) {
         NSInteger usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
+        if (usedFlow < 0) {
+            usedFlow = 0;
+        }
         NSInteger remainFlow = [GlobalHolder sharedSingleton].limitFlow - usedFlow;
         NSInteger limitFlow = [GlobalHolder sharedSingleton].limitFlow;
         if (remainFlow > 0) {

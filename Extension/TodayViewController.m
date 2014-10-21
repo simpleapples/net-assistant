@@ -106,9 +106,16 @@
     freeifaddrs(ifa_list);
     
     NSInteger usedFlow = wwanFlow - self.lastFlow + self.offsetFlow;
+    if (usedFlow < 0) {
+        usedFlow = 0;
+    }
     self.usedFlowLabel.text = [self flowValueToStr:usedFlow];
     self.limitFlowLabel.text = [NSString stringWithFormat:@"套餐总量: %@", [self flowValueToStr:self.limitFlow]];
-    self.unusedFlowLabel.text = [self flowValueToStr:self.limitFlow - usedFlow];
+    NSInteger unusedFlow = self.limitFlow - usedFlow;
+    if (unusedFlow < 0) {
+        unusedFlow = 0;
+    }
+    self.unusedFlowLabel.text = [self flowValueToStr:unusedFlow];
     self.progressWith.constant = (CGFloat)usedFlow / (CGFloat)self.limitFlow * self.progressView.frame.size.width;
     
     NSInteger percent = (self.limitFlow - usedFlow) * 100.0f / self.limitFlow;
