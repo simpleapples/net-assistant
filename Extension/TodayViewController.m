@@ -116,7 +116,11 @@
         unusedFlow = 0;
     }
     self.unusedFlowLabel.text = [self flowValueToStr:unusedFlow];
-    self.progressWith.constant = (CGFloat)usedFlow / (CGFloat)self.limitFlow * self.progressView.frame.size.width;
+    CGFloat progressWidth = (CGFloat)usedFlow / (CGFloat)self.limitFlow * self.progressView.frame.size.width;
+    if (progressWidth > self.progressView.frame.size.width) {
+        progressWidth = self.progressView.frame.size.width;
+    }
+    self.progressWith.constant = progressWidth;
     
     NSInteger percent = (self.limitFlow - usedFlow) * 100.0f / self.limitFlow;
     if (percent < 10) {
