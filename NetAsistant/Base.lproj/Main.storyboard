@@ -168,29 +168,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Step_1" translatesAutoresizingMaskIntoConstraints="NO" id="g70-QP-ycH">
-                                <rect key="frame" x="80" y="90" width="160" height="177"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2c-Oa-TQE">
+                                <rect key="frame" x="10" y="54" width="300" height="460"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一步：下滑打开通知栏，点击「编辑」" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H4-Eb-5jK">
+                                        <rect key="frame" x="10" y="10" width="280" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="MeK-d5-wlz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Step_1" translatesAutoresizingMaskIntoConstraints="NO" id="g70-QP-ycH">
+                                        <rect key="frame" x="70" y="40" width="160" height="177"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="Dxa-Wz-r2p"/>
+                                            <constraint firstAttribute="height" constant="177" id="yMb-cr-Cuu"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第二步：点击「上网助手」前的加号，完成后点击右上角「完成」" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slc-Cg-ta9">
+                                        <rect key="frame" x="10" y="227" width="280" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5sn-YI-4RI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Step_2" translatesAutoresizingMaskIntoConstraints="NO" id="lvb-UJ-FWL">
+                                        <rect key="frame" x="70" y="277" width="160" height="174"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="Zwd-ha-bjk"/>
+                                            <constraint firstAttribute="height" constant="174" id="tvG-8o-YV2"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="Dxa-Wz-r2p"/>
-                                    <constraint firstAttribute="height" constant="177" id="yMb-cr-Cuu"/>
+                                    <constraint firstItem="4H4-Eb-5jK" firstAttribute="top" secondItem="h2c-Oa-TQE" secondAttribute="top" constant="10" id="2yK-8J-QF6"/>
+                                    <constraint firstItem="slc-Cg-ta9" firstAttribute="top" secondItem="g70-QP-ycH" secondAttribute="bottom" constant="10" id="7dg-P7-XUr"/>
+                                    <constraint firstItem="lvb-UJ-FWL" firstAttribute="top" secondItem="slc-Cg-ta9" secondAttribute="bottom" constant="10" id="HG2-O6-EJy"/>
+                                    <constraint firstItem="slc-Cg-ta9" firstAttribute="leading" secondItem="h2c-Oa-TQE" secondAttribute="leading" constant="10" id="QBw-7l-YzI"/>
+                                    <constraint firstItem="4H4-Eb-5jK" firstAttribute="leading" secondItem="h2c-Oa-TQE" secondAttribute="leading" constant="10" id="RHB-Us-Szq"/>
+                                    <constraint firstAttribute="centerX" secondItem="lvb-UJ-FWL" secondAttribute="centerX" id="Vay-kq-7WH"/>
+                                    <constraint firstAttribute="centerX" secondItem="g70-QP-ycH" secondAttribute="centerX" id="VgF-9b-PA3"/>
+                                    <constraint firstAttribute="width" constant="300" id="aBb-aA-4NO"/>
+                                    <constraint firstAttribute="trailing" secondItem="slc-Cg-ta9" secondAttribute="trailing" constant="10" id="pPw-ja-f0f"/>
+                                    <constraint firstAttribute="trailing" secondItem="4H4-Eb-5jK" secondAttribute="trailing" constant="10" id="vdb-41-h2h"/>
+                                    <constraint firstAttribute="height" constant="460" id="xy8-Rf-POQ"/>
+                                    <constraint firstItem="g70-QP-ycH" firstAttribute="top" secondItem="4H4-Eb-5jK" secondAttribute="bottom" constant="10" id="zu9-cF-WyT"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Step_2" translatesAutoresizingMaskIntoConstraints="NO" id="lvb-UJ-FWL">
-                                <rect key="frame" x="80" y="337" width="160" height="174"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="Zwd-ha-bjk"/>
-                                    <constraint firstAttribute="height" constant="174" id="tvG-8o-YV2"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第二步：点击「上网助手」前的加号，完成后点击右上角「完成」" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slc-Cg-ta9">
-                                <rect key="frame" x="14" y="287" width="292" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="5sn-YI-4RI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8T-Zz-L0d">
                                 <rect key="frame" x="276" y="20" width="44" height="44"/>
                                 <constraints>
@@ -204,49 +233,14 @@
                                     <action selector="onCloseButtonClick:" destination="Ev1-gI-f1H" eventType="touchUpInside" id="cs5-or-eyI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一步：下滑打开通知栏，点击「编辑」" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H4-Eb-5jK">
-                                <rect key="frame" x="14" y="60" width="292" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="MeK-d5-wlz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lvb-UJ-FWL" firstAttribute="leading" secondItem="Lwi-u8-yfC" secondAttribute="leading" constant="10" id="1hp-Xi-86y"/>
-                            <constraint firstItem="lvb-UJ-FWL" firstAttribute="top" secondItem="slc-Cg-ta9" secondAttribute="bottom" constant="10" id="4lf-OW-NPV"/>
-                            <constraint firstItem="slc-Cg-ta9" firstAttribute="top" secondItem="g70-QP-ycH" secondAttribute="bottom" constant="20" id="4sq-Cy-cp8"/>
-                            <constraint firstAttribute="centerX" secondItem="lvb-UJ-FWL" secondAttribute="centerX" id="4vH-6l-ocS"/>
-                            <constraint firstItem="4H4-Eb-5jK" firstAttribute="trailing" secondItem="slc-Cg-ta9" secondAttribute="trailing" id="5p9-TX-AQH"/>
-                            <constraint firstItem="4H4-Eb-5jK" firstAttribute="leading" secondItem="Lwi-u8-yfC" secondAttribute="leading" constant="14" id="7fj-Uc-eej"/>
-                            <constraint firstAttribute="trailing" secondItem="4H4-Eb-5jK" secondAttribute="trailing" constant="14" id="Abz-U5-Qjk"/>
-                            <constraint firstItem="4H4-Eb-5jK" firstAttribute="top" secondItem="okB-AF-v9H" secondAttribute="bottom" constant="40" id="EXQ-lT-PWg"/>
-                            <constraint firstItem="4H4-Eb-5jK" firstAttribute="leading" secondItem="slc-Cg-ta9" secondAttribute="leading" id="Eqd-fj-u5t"/>
-                            <constraint firstItem="4H4-Eb-5jK" firstAttribute="top" secondItem="okB-AF-v9H" secondAttribute="bottom" constant="14" id="Gkf-RW-mrF"/>
-                            <constraint firstItem="g70-QP-ycH" firstAttribute="leading" secondItem="Lwi-u8-yfC" secondAttribute="leading" constant="10" id="MpX-c0-NdX"/>
-                            <constraint firstAttribute="centerX" secondItem="g70-QP-ycH" secondAttribute="centerX" id="T42-f2-xU7"/>
-                            <constraint firstItem="g70-QP-ycH" firstAttribute="top" secondItem="4H4-Eb-5jK" secondAttribute="bottom" constant="10" id="d7m-PN-Qo2"/>
+                            <constraint firstAttribute="centerY" secondItem="h2c-Oa-TQE" secondAttribute="centerY" id="VkI-Bj-Xby"/>
                             <constraint firstItem="H8T-Zz-L0d" firstAttribute="top" secondItem="okB-AF-v9H" secondAttribute="bottom" id="dw0-W5-IhK"/>
-                            <constraint firstAttribute="centerX" secondItem="g70-QP-ycH" secondAttribute="centerX" id="fJy-E2-uzz"/>
-                            <constraint firstItem="lvb-UJ-FWL" firstAttribute="top" secondItem="g70-QP-ycH" secondAttribute="bottom" constant="30" id="k8p-bS-sZq"/>
-                            <constraint firstItem="g70-QP-ycH" firstAttribute="top" secondItem="okB-AF-v9H" secondAttribute="bottom" constant="10" id="qw0-mH-Biq"/>
                             <constraint firstAttribute="trailing" secondItem="H8T-Zz-L0d" secondAttribute="trailing" id="sZL-Jx-Qgc"/>
-                            <constraint firstItem="4H4-Eb-5jK" firstAttribute="top" secondItem="H8T-Zz-L0d" secondAttribute="top" constant="30" id="utq-mO-aDl"/>
+                            <constraint firstAttribute="centerX" secondItem="h2c-Oa-TQE" secondAttribute="centerX" id="y0J-jL-sot"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Gkf-RW-mrF"/>
-                                <exclude reference="utq-mO-aDl"/>
-                                <exclude reference="MpX-c0-NdX"/>
-                                <exclude reference="fJy-E2-uzz"/>
-                                <exclude reference="qw0-mH-Biq"/>
-                                <exclude reference="1hp-Xi-86y"/>
-                                <exclude reference="k8p-bS-sZq"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
