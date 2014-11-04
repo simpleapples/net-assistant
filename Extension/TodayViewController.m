@@ -35,7 +35,7 @@
     
     UIColor *yellow = [UIColor colorWithRed:252 / 255.0f green:176 / 255.0f blue:60 / 255.0f alpha:1.0f];
     UIColor *red = [UIColor colorWithRed:252 / 255.0f green:91 / 255.0f blue:63 / 255.0f alpha:1.0f];
-    UIColor *green = [UIColor colorWithRed:111 / 255.0f green:213 / 255.0f blue:127 / 255.0f alpha:1.0f];
+    UIColor *green = [UIColor colorWithRed:79 / 255.0f green:202 / 255.0f blue:82 / 255.0f alpha:1.0f];
     self.colorArray = [[NSArray alloc] initWithObjects:green, yellow, red, nil];
 }
 
