@@ -22,7 +22,7 @@
                                     <constraint firstAttribute="height" constant="25" id="ad9-xO-4WO"/>
                                     <constraint firstAttribute="width" constant="25" id="iBh-8v-5wq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" constant="40" id="WEo-UM-CqJ"/>
                                     <constraint firstAttribute="height" constant="25" id="a91-Nq-Zm9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -42,17 +42,7 @@
                                     <constraint firstAttribute="width" constant="140" id="5fs-W0-ry7"/>
                                     <constraint firstAttribute="height" constant="30" id="Qk7-yD-cEy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0B" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-vR-4Bd">
-                                <rect key="frame" x="15" y="383" width="140" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="A8V-4M-GZZ"/>
-                                    <constraint firstAttribute="height" constant="30" id="ii3-9a-MZe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -62,6 +52,7 @@
                                     <constraint firstAttribute="width" constant="80" id="VtI-aH-2yg"/>
                                     <constraint firstAttribute="height" constant="30" id="Zu3-a8-r93"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="15"/>
                                 <state key="normal" title="修改套餐">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,6 +67,7 @@
                                     <constraint firstAttribute="width" constant="80" id="1Mx-wq-GJD"/>
                                     <constraint firstAttribute="height" constant="30" id="Rcy-ut-Vxi"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="15"/>
                                 <state key="normal" title="校准用量">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,7 +76,7 @@
                                     <action selector="onCalibrateButtonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dWg-R4-NbS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCa-nA-6Fx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCa-nA-6Fx">
                                 <rect key="frame" x="25" y="100" width="180" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="VXa-NS-YZn"/>
@@ -100,7 +92,7 @@
                                     <constraint firstAttribute="height" constant="30" id="GGr-BO-dzC"/>
                                     <constraint firstAttribute="width" constant="140" id="faW-Ya-PnJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="12"/>
                                 <state key="normal" title=" Widget使用指南" image="IconInfo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,6 +101,16 @@
                                     <segue destination="Ev1-gI-f1H" kind="presentation" id="zeF-yZ-xmZ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0B" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-vR-4Bd">
+                                <rect key="frame" x="15" y="383" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="A8V-4M-GZZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="ii3-9a-MZe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.30980392156862746" green="0.792156862745098" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -248,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prP-6R-cAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861" y="765"/>
+            <point key="canvasLocation" x="844" y="389"/>
         </scene>
     </scenes>
     <resources>
