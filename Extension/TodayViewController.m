@@ -133,14 +133,14 @@
 }
 
 - (NSString *)flowValueToStr:(int64_t)bytes {
-    if (bytes < 1024) {
+    if (bytes < 1000) {
         return [NSString stringWithFormat:@"%lluB", bytes];
-    } else if (bytes >= 1024 && bytes < 1024 * 1024) {
-        return [NSString stringWithFormat:@"%.1fKB", 1.0 * bytes / 1024];
-    } else if (bytes >= 1024 * 1024 && bytes < 1024 * 1024 * 1024) {
-        return [NSString stringWithFormat:@"%.2fMB", 1.0 * bytes / (1024 * 1024)];
+    } else if (bytes >= 1000 && bytes < 1000 * 1000) {
+        return [NSString stringWithFormat:@"%.1fKB", 1.0 * bytes / 1000];
+    } else if (bytes >= 1000 * 1000 && bytes < 1000 * 1000 * 1000) {
+        return [NSString stringWithFormat:@"%.2fMB", 1.0 * bytes / (1000 * 1000)];
     } else {
-        return [NSString stringWithFormat:@"%.3fGB", 1.0 * bytes / (1024 * 1024 * 1024)];
+        return [NSString stringWithFormat:@"%.3fGB", 1.0 * bytes / (1000 * 1000 * 1000)];
     }
 }
 
