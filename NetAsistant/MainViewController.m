@@ -24,15 +24,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [UIApplication sharedApplication].statusBarHidden = NO;
- 
+     
     self.calibrateButton.layer.borderColor = [[UIColor whiteColor] CGColor];
-    self.calibrateButton.layer.borderWidth = 1.0f;
-    self.calibrateButton.layer.cornerRadius = 5.0f;
     self.modifyButton.layer.borderColor = [[UIColor whiteColor] CGColor];
-    self.modifyButton.layer.borderWidth = 1.0f;
-    self.modifyButton.layer.cornerRadius = 5.0f;
     
     NSTimer *refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:refreshTimer forMode:NSDefaultRunLoopMode];
@@ -70,12 +64,9 @@
 {
     NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
     if (networkFlow) {
-        NSInteger usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
-        if (usedFlow < 0) {
-            usedFlow = 0;
-        }
-        NSInteger remainFlow = [GlobalHolder sharedSingleton].limitFlow - usedFlow;
-        NSInteger limitFlow = [GlobalHolder sharedSingleton].limitFlow;
+        int64_t usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
+        int64_t remainFlow = [GlobalHolder sharedSingleton].limitFlow - usedFlow;
+        int64_t limitFlow = [GlobalHolder sharedSingleton].limitFlow;
         if (remainFlow > 0) {
             NSInteger percent = remainFlow * 100.0f / limitFlow;
             self.flowPercentLabel.text = [NSString stringWithFormat:@"%ld", (long)percent];
@@ -99,18 +90,27 @@
     }
 }
 
-- (NSString *)flowValueToStr:(NSInteger)bytes
+- (NSString *)flowValueToStr:(int64_t)bytes
 {
     if (bytes < 1024) {
-        return [NSString stringWithFormat:@"%ldB", (long)bytes];
+        return [NSString stringWithFormat:@"%lluB", bytes];
     } else if (bytes >= 1024 && bytes < 1024 * 1024) {
-        return [NSString stringWithFormat:@"%.1fKB", (double)bytes / 1024];
+        return [NSString stringWithFormat:@"%.1fKB", 1.0 * bytes / 1024];
     } else if (bytes >= 1024 * 1024 && bytes < 1024 * 1024 * 1024) {
-        return [NSString stringWithFormat:@"%.2fMB", (double)bytes / (1024 * 1024)];
+        return [NSString stringWithFormat:@"%.2fMB", 1.0 * bytes / (1024 * 1024)];
     } else {
-        return [NSString stringWithFormat:@"%.3fGB", (double)bytes / (1024 * 1024 * 1024)];
+        return [NSString stringWithFormat:@"%.3fGB", 1.0 * bytes / (1024 * 1024 * 1024)];
     }
 }
+
+- (NSInteger)monthWithDate:(NSDate *)date
+{
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comp = [cal components:NSCalendarUnitMonth fromDate:date];
+    return comp.month;
+}
+
+#pragma mark - UIAlertView
 
 - (void)alertModifyView
 {
@@ -132,6 +132,8 @@
     [alertView show];
 }
 
+#pragma mark - UIAlertViewDelegate
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1 && [alertView textFieldAtIndex:0].text.length > 0) {
@@ -146,12 +148,7 @@
     }
 }
 
-- (NSInteger)monthWithDate:(NSDate *)date
-{
-    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *comp = [cal components:NSCalendarUnitMonth fromDate:date];
-    return comp.month;
-}
+#pragma mark - Handler
 
 - (IBAction)onCalibrateButtonClick:(id)sender
 {

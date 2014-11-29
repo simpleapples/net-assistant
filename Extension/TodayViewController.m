@@ -6,11 +6,12 @@
 //  Copyright (c) 2014 Zzy. All rights reserved.
 //
 
-#import "TodayViewController.h"
-#import <NotificationCenter/NotificationCenter.h>
 #include <ifaddrs.h>
 #include <sys/socket.h>
 #include <net/if.h>
+
+#import "TodayViewController.h"
+#import <NotificationCenter/NotificationCenter.h>
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UILabel *usedFlowLabel;
@@ -19,9 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIView *progressView;
 @property (weak, nonatomic) IBOutlet UIView *progressHoverView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressWith;
-@property (nonatomic) NSInteger limitFlow;
-@property (nonatomic) NSInteger lastFlow;
-@property (nonatomic) NSInteger offsetFlow;
+@property (nonatomic) int64_t limitFlow;
+@property (nonatomic) int64_t lastFlow;
+@property (nonatomic) int64_t offsetFlow;
 @property (strong, nonatomic) NSDate *lastDate;
 @property (strong, nonatomic) NSArray *colorArray;
 @end
@@ -64,15 +65,15 @@
         return;
     }
     
-    uint32_t iBytes     = 0;
-    uint32_t oBytes     = 0;
-    uint32_t allFlow    = 0;
-    uint32_t wifiIBytes = 0;
-    uint32_t wifiOBytes = 0;
-    uint32_t wifiFlow   = 0;
-    uint32_t wwanIBytes = 0;
-    uint32_t wwanOBytes = 0;
-    uint32_t wwanFlow   = 0;
+    int64_t iBytes     = 0;
+    int64_t oBytes     = 0;
+    int64_t allFlow    = 0;
+    int64_t wifiIBytes = 0;
+    int64_t wifiOBytes = 0;
+    int64_t wifiFlow   = 0;
+    int64_t wwanIBytes = 0;
+    int64_t wwanOBytes = 0;
+    int64_t wwanFlow   = 0;
     
     for (ifa = ifa_list; ifa; ifa = ifa->ifa_next) {
         if (AF_LINK != ifa->ifa_addr->sa_family) {
@@ -105,13 +106,10 @@
     }
     freeifaddrs(ifa_list);
     
-    NSInteger usedFlow = wwanFlow - self.lastFlow + self.offsetFlow;
-    if (usedFlow < 0) {
-        usedFlow = 0;
-    }
+    int64_t usedFlow = wwanFlow - self.lastFlow + self.offsetFlow;
     self.usedFlowLabel.text = [self flowValueToStr:usedFlow];
     self.limitFlowLabel.text = [NSString stringWithFormat:@"套餐总量: %@", [self flowValueToStr:self.limitFlow]];
-    NSInteger unusedFlow = self.limitFlow - usedFlow;
+    int64_t unusedFlow = self.limitFlow - usedFlow;
     if (unusedFlow < 0) {
         unusedFlow = 0;
     }
@@ -136,36 +134,17 @@
     [self backupToFile];
 }
 
-- (NSString *)flowValueToStr:(NSInteger)bytes
+- (NSString *)flowValueToStr:(int64_t)bytes
 {
     if (bytes < 1024) {
-        return [NSString stringWithFormat:@"%ldB", (long)bytes];
+        return [NSString stringWithFormat:@"%lluB", bytes];
     } else if (bytes >= 1024 && bytes < 1024 * 1024) {
-        return [NSString stringWithFormat:@"%.1fKB", (double)bytes / 1024];
+        return [NSString stringWithFormat:@"%.1fKB", 1.0 * bytes / 1024];
     } else if (bytes >= 1024 * 1024 && bytes < 1024 * 1024 * 1024) {
-        return [NSString stringWithFormat:@"%.2fMB", (double)bytes / (1024 * 1024)];
+        return [NSString stringWithFormat:@"%.2fMB", 1.0 * bytes / (1024 * 1024)];
     } else {
-        return [NSString stringWithFormat:@"%.3fGB", (double)bytes / (1024 * 1024 * 1024)];
+        return [NSString stringWithFormat:@"%.3fGB", 1.0 * bytes / (1024 * 1024 * 1024)];
     }
-}
-
-- (void)backupToFile
-{
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
-    [userDefaults setInteger:self.limitFlow forKey:@"limitFlow"];
-    [userDefaults setInteger:self.lastFlow forKey:@"lastFlow"];
-    [userDefaults setInteger:self.offsetFlow forKey:@"offsetFlow"];
-    [userDefaults setObject:self.lastDate forKey:@"lastDate"];
-    [userDefaults synchronize];
-}
-
-- (void)recoverFromFile
-{
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
-    self.limitFlow = [userDefaults integerForKey:@"limitFlow"];
-    self.lastFlow = [userDefaults integerForKey:@"lastFlow"];
-    self.offsetFlow = [userDefaults integerForKey:@"offsetFlow"];
-    self.lastDate = [userDefaults objectForKey:@"lastDate"];
 }
 
 - (NSInteger)monthWithDate:(NSDate *)date
@@ -174,6 +153,30 @@
     NSDateComponents *comp = [cal components:NSCalendarUnitMonth fromDate:date];
     return comp.month;
 }
+
+#pragma mark - Persistance
+
+- (void)backupToFile
+{
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.limitFlow] forKey:@"limitFlow"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.lastFlow] forKey:@"lastFlow"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.offsetFlow] forKey:@"offsetFlow"];
+    [userDefaults setObject:self.lastDate forKey:@"lastDate"];
+    [userDefaults synchronize];
+}
+
+- (void)recoverFromFile
+{
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
+    self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
+    self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
+    self.lastFlow = [[userDefaults objectForKey:@"lastFlow"] longLongValue];
+    self.offsetFlow = [[userDefaults objectForKey:@"offsetFlow"] longLongValue];
+    self.lastDate = [userDefaults objectForKey:@"lastDate"];
+}
+
+#pragma mark - Handler
 
 - (IBAction)onModifyButtonClick:(id)sender
 {

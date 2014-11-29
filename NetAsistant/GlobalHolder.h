@@ -18,9 +18,9 @@ typedef NS_OPTIONS(NSInteger, COLOR_TYPE)
 
 @interface GlobalHolder : NSObject
 
-@property (nonatomic) NSInteger limitFlow;
-@property (nonatomic) NSInteger lastFlow;
-@property (nonatomic) NSInteger offsetFlow;
+@property (nonatomic) int64_t limitFlow;
+@property (nonatomic) int64_t lastFlow;
+@property (nonatomic) int64_t offsetFlow;
 @property (strong, nonatomic) NSDate *lastDate;
 
 + (GlobalHolder *)sharedSingleton;

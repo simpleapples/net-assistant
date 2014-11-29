@@ -51,9 +51,9 @@
 - (void)backupToFile
 {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
-    [userDefaults setInteger:self.limitFlow forKey:@"limitFlow"];
-    [userDefaults setInteger:self.lastFlow forKey:@"lastFlow"];
-    [userDefaults setInteger:self.offsetFlow forKey:@"offsetFlow"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.limitFlow] forKey:@"limitFlow"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.lastFlow] forKey:@"lastFlow"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.offsetFlow] forKey:@"offsetFlow"];
     [userDefaults setObject:self.lastDate forKey:@"lastDate"];
     [userDefaults synchronize];
 }
@@ -61,9 +61,10 @@
 - (void)recoverFromFile
 {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
-    self.limitFlow = [userDefaults integerForKey:@"limitFlow"];
-    self.lastFlow = [userDefaults integerForKey:@"lastFlow"];
-    self.offsetFlow = [userDefaults integerForKey:@"offsetFlow"];
+    self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
+    self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
+    self.lastFlow = [[userDefaults objectForKey:@"lastFlow"] longLongValue];
+    self.offsetFlow = [[userDefaults objectForKey:@"offsetFlow"] longLongValue];
     self.lastDate = [userDefaults objectForKey:@"lastDate"];
 }
 

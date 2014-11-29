@@ -11,16 +11,16 @@
 
 @interface NetworkFlow : NSObject
 
-@property (nonatomic, readonly) NSInteger allFlow;
-@property (nonatomic, readonly) NSInteger allInFlow;
-@property (nonatomic, readonly) NSInteger allOutFlow;
-@property (nonatomic, readonly) NSInteger wifiFlow;
-@property (nonatomic, readonly) NSInteger wifiInFlow;
-@property (nonatomic, readonly) NSInteger wifiOutFlow;
-@property (nonatomic, readonly) NSInteger wwanFlow;
-@property (nonatomic, readonly) NSInteger wwanInFlow;
-@property (nonatomic, readonly) NSInteger wwanOutFlow;
+@property (nonatomic, readonly) int64_t allFlow;
+@property (nonatomic, readonly) int64_t allInFlow;
+@property (nonatomic, readonly) int64_t allOutFlow;
+@property (nonatomic, readonly) int64_t wifiFlow;
+@property (nonatomic, readonly) int64_t wifiInFlow;
+@property (nonatomic, readonly) int64_t wifiOutFlow;
+@property (nonatomic, readonly) int64_t wwanFlow;
+@property (nonatomic, readonly) int64_t wwanInFlow;
+@property (nonatomic, readonly) int64_t wwanOutFlow;
 
-- (instancetype)initWithAllFlow:(NSInteger)allFlow allInFlow:(NSInteger)allInFlow allOutFlow:(NSInteger)allOutFlow wifiFlow:(NSInteger)wifiFlow wifiInFlow:(NSInteger)wifiInFlow wifiOutFlow:(NSInteger)wifiOutFlow wwanFlow:(NSInteger)wwanFlow wwanInFlow:(NSInteger)wwanInFlow wwanOutFlow:(NSInteger)wwanOutFlow;
+- (instancetype)initWithAllFlow:(int64_t)allFlow allInFlow:(int64_t)allInFlow allOutFlow:(int64_t)allOutFlow wifiFlow:(int64_t)wifiFlow wifiInFlow:(int64_t)wifiInFlow wifiOutFlow:(int64_t)wifiOutFlow wwanFlow:(int64_t)wwanFlow wwanInFlow:(int64_t)wwanInFlow wwanOutFlow:(int64_t)wwanOutFlow;
 
 @end

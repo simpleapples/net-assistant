@@ -10,15 +10,15 @@
 
 @interface NetworkFlow ()
 
-@property (nonatomic) NSInteger allFlow;
-@property (nonatomic) NSInteger allInFlow;
-@property (nonatomic) NSInteger allOutFlow;
-@property (nonatomic) NSInteger wifiFlow;
-@property (nonatomic) NSInteger wifiInFlow;
-@property (nonatomic) NSInteger wifiOutFlow;
-@property (nonatomic) NSInteger wwanFlow;
-@property (nonatomic) NSInteger wwanInFlow;
-@property (nonatomic) NSInteger wwanOutFlow;
+@property (nonatomic) int64_t allFlow;
+@property (nonatomic) int64_t allInFlow;
+@property (nonatomic) int64_t allOutFlow;
+@property (nonatomic) int64_t wifiFlow;
+@property (nonatomic) int64_t wifiInFlow;
+@property (nonatomic) int64_t wifiOutFlow;
+@property (nonatomic) int64_t wwanFlow;
+@property (nonatomic) int64_t wwanInFlow;
+@property (nonatomic) int64_t wwanOutFlow;
 
 @end
 
@@ -29,7 +29,7 @@
     @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Must use initWithAllFlow:allInFlow:allOutFlow:wifiFlow:wifiInFlow:wifiOutFlow:wwanFlow:wwanInFlow:wwanOutFlow: instead." userInfo:nil];
 }
 
-- (instancetype)initWithAllFlow:(NSInteger)allFlow allInFlow:(NSInteger)allInFlow allOutFlow:(NSInteger)allOutFlow wifiFlow:(NSInteger)wifiFlow wifiInFlow:(NSInteger)wifiInFlow wifiOutFlow:(NSInteger)wifiOutFlow wwanFlow:(NSInteger)wwanFlow wwanInFlow:(NSInteger)wwanInFlow wwanOutFlow:(NSInteger)wwanOutFlow
+- (instancetype)initWithAllFlow:(int64_t)allFlow allInFlow:(int64_t)allInFlow allOutFlow:(int64_t)allOutFlow wifiFlow:(int64_t)wifiFlow wifiInFlow:(int64_t)wifiInFlow wifiOutFlow:(int64_t)wifiOutFlow wwanFlow:(int64_t)wwanFlow wwanInFlow:(int64_t)wwanInFlow wwanOutFlow:(int64_t)wwanOutFlow
 {
     self = [super init];
     if (self) {

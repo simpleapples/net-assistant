@@ -21,15 +21,15 @@
         return nil;
     }
     
-    uint32_t iBytes     = 0;
-    uint32_t oBytes     = 0;
-    uint32_t allFlow    = 0;
-    uint32_t wifiIBytes = 0;
-    uint32_t wifiOBytes = 0;
-    uint32_t wifiFlow   = 0;
-    uint32_t wwanIBytes = 0;
-    uint32_t wwanOBytes = 0;
-    uint32_t wwanFlow   = 0;
+    int64_t iBytes     = 0;
+    int64_t oBytes     = 0;
+    int64_t allFlow    = 0;
+    int64_t wifiIBytes = 0;
+    int64_t wifiOBytes = 0;
+    int64_t wifiFlow   = 0;
+    int64_t wwanIBytes = 0;
+    int64_t wwanOBytes = 0;
+    int64_t wwanFlow   = 0;
     
     for (ifa = ifa_list; ifa; ifa = ifa->ifa_next) {
         if (AF_LINK != ifa->ifa_addr->sa_family) {
