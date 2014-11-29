@@ -9,12 +9,14 @@
 #import "GlobalHolder.h"
 
 @interface GlobalHolder ()
+
 @property (strong, nonatomic) NSArray *colorArray;
+
 @end
+
 @implementation GlobalHolder
 
-+ (GlobalHolder *)sharedSingleton
-{
++ (GlobalHolder *)sharedSingleton {
     static GlobalHolder *sharedSingleton;
     @synchronized(self) {
         if (!sharedSingleton) {
@@ -24,8 +26,7 @@
     }
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         UIColor *yellow = [UIColor colorWithRed:252 / 255.0f green:176 / 255.0f blue:60 / 255.0f alpha:1.0f];
@@ -36,8 +37,7 @@
     return self;
 }
 
-- (UIColor *)colorWithType:(COLOR_TYPE)type
-{
+- (UIColor *)colorWithType:(COLOR_TYPE)type {
     switch (type) {
         case COLOR_TYPE_NORMAL:
             return [self.colorArray objectAtIndex:0];
@@ -48,8 +48,7 @@
     }
 }
 
-- (void)backupToFile
-{
+- (void)backupToFile {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
     [userDefaults setObject:[NSNumber numberWithLongLong:self.limitFlow] forKey:@"limitFlow"];
     [userDefaults setObject:[NSNumber numberWithLongLong:self.lastFlow] forKey:@"lastFlow"];
@@ -58,8 +57,7 @@
     [userDefaults synchronize];
 }
 
-- (void)recoverFromFile
-{
+- (void)recoverFromFile {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
     self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
     self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];

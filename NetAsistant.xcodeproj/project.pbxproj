@@ -11,6 +11,8 @@
 		5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A451CEE19CD6DE100F21478 /* TodayViewController.m */; };
 		5A451CF119CD6DE100F21478 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A451CF019CD6DE100F21478 /* MainInterface.storyboard */; };
 		5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A451CE719CD6DE100F21478 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5AC5CBBA1A298086001DD8CC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC5CBB91A298086001DD8CC /* MessageUI.framework */; };
+		5AC5CBBD1A2982CD001DD8CC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5CBBC1A2982CD001DD8CC /* AboutViewController.m */; };
 		5AC874A919EFCF5200CFBD24 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC874A819EFCF5200CFBD24 /* InfoViewController.m */; };
 		5AED302719CD47F70098DC57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302619CD47F70098DC57 /* main.m */; };
 		5AED302A19CD47F70098DC57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302919CD47F70098DC57 /* AppDelegate.m */; };
@@ -71,6 +73,9 @@
 		5A451CF019CD6DE100F21478 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		5A7BCE9919E7C6A1005F01F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5A7BCE9A19E7C6A1005F01F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5AC5CBB91A298086001DD8CC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5AC5CBBB1A2982CD001DD8CC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		5AC5CBBC1A2982CD001DD8CC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		5AC874A719EFCF5200CFBD24 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		5AC874A819EFCF5200CFBD24 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		5AE39F2119D0134000AEC2F0 /* NetAsistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NetAsistant.entitlements; sourceTree = "<group>"; };
@@ -111,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AC5CBBA1A298086001DD8CC /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +221,8 @@
 				5AED302C19CD47F70098DC57 /* MainViewController.m */,
 				5AC874A719EFCF5200CFBD24 /* InfoViewController.h */,
 				5AC874A819EFCF5200CFBD24 /* InfoViewController.m */,
+				5AC5CBBB1A2982CD001DD8CC /* AboutViewController.h */,
+				5AC5CBBC1A2982CD001DD8CC /* AboutViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 		5AED308B19CD4BC40098DC57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AC5CBB91A298086001DD8CC /* MessageUI.framework */,
 				5AED308C19CD4CF80098DC57 /* CoreGraphics.framework */,
 				5AED305619CD4B6D0098DC57 /* Foundation.framework */,
 				5A451CE819CD6DE100F21478 /* NotificationCenter.framework */,
@@ -402,6 +411,7 @@
 			files = (
 				5AED305119CD49F10098DC57 /* NetworkFlowService.m in Sources */,
 				5AED304E19CD49950098DC57 /* GlobalHolder.m in Sources */,
+				5AC5CBBD1A2982CD001DD8CC /* AboutViewController.m in Sources */,
 				5AED305519CD4A4E0098DC57 /* NetworkFlow.m in Sources */,
 				5AED302D19CD47F70098DC57 /* MainViewController.m in Sources */,
 				5AED302A19CD47F70098DC57 /* AppDelegate.m in Sources */,

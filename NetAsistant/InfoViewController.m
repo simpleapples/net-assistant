@@ -10,24 +10,20 @@
 
 @implementation InfoViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)onCloseButtonClick:(id)sender
-{
+- (IBAction)onCloseButtonClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
