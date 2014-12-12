@@ -18,12 +18,13 @@
 
 + (GlobalHolder *)sharedSingleton {
     static GlobalHolder *sharedSingleton;
-    @synchronized(self) {
+    static dispatch_once_t onceToken = 0;
+    dispatch_once(&onceToken, ^{
         if (!sharedSingleton) {
             sharedSingleton = [[GlobalHolder alloc] init];
         }
-        return sharedSingleton;
-    }
+    });
+    return sharedSingleton;
 }
 
 - (instancetype)init {
