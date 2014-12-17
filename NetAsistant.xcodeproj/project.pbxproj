@@ -341,6 +341,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 						};
 					};
 					5AED303919CD47F70098DC57 = {

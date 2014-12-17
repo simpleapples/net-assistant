@@ -14,7 +14,8 @@
 
 @implementation NetworkFlowService
 
-+ (NetworkFlow *)networkFlow {
++ (NetworkFlow *)networkFlow
+{
     struct ifaddrs *ifa_list = 0, *ifa;
     if (getifaddrs(&ifa_list) == -1) {
         return nil;

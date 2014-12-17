@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "GlobalHolder.h"
+#import "NetworkFlowService.h"
+#import "NetworkFlow.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +21,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     application.statusBarHidden = NO;
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     return YES;
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
+    int64_t usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
+    [GlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
+    [GlobalHolder sharedSingleton].offsetFlow = usedFlow;
+    [GlobalHolder sharedSingleton].lastDate = [NSDate date];
+    [[GlobalHolder sharedSingleton] backupToFile];
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

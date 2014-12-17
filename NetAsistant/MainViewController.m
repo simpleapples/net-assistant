@@ -18,22 +18,22 @@
 @property (weak, nonatomic) IBOutlet UILabel *limitFlowLabel;
 @property (weak, nonatomic) IBOutlet UIButton *calibrateButton;
 @property (weak, nonatomic) IBOutlet UIButton *modifyButton;
+@property (strong, nonatomic) NSTimer *refreshTimer;
 
 @end
 
 @implementation MainViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
      
     self.calibrateButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.modifyButton.layer.borderColor = [[UIColor whiteColor] CGColor];
-    
-    NSTimer *refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:refreshTimer forMode:NSDefaultRunLoopMode];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[GlobalHolder sharedSingleton] recoverFromFile];
@@ -48,17 +48,25 @@
         [[GlobalHolder sharedSingleton] backupToFile];
     }
     [self updateFlowData];
+    
+    self.refreshTimer = nil;
+    self.refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.refreshTimer forMode:NSDefaultRunLoopMode];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated
+{
     [super viewDidDisappear:animated];
+    [self.refreshTimer invalidate];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
-- (void)updateFlowData {
+- (void)updateFlowData
+{
     NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
     if (networkFlow) {
         int64_t usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
@@ -84,10 +92,12 @@
         self.wwanFlowLabel.text = [self flowValueToStr:usedFlow];
         [GlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
         [GlobalHolder sharedSingleton].offsetFlow = usedFlow;
+        [GlobalHolder sharedSingleton].lastDate = [NSDate date];
     }
 }
 
-- (NSString *)flowValueToStr:(int64_t)bytes {
+- (NSString *)flowValueToStr:(int64_t)bytes
+{
     if (bytes < 1000) {
         return [NSString stringWithFormat:@"%lluB", bytes];
     } else if (bytes >= 1000 && bytes < 1000 * 1000) {
@@ -99,7 +109,8 @@
     }
 }
 
-- (NSInteger)monthWithDate:(NSDate *)date {
+- (NSInteger)monthWithDate:(NSDate *)date
+{
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comp = [cal components:NSCalendarUnitMonth fromDate:date];
     return comp.month;
@@ -107,7 +118,8 @@
 
 #pragma mark - UIAlertView
 
-- (void)alertModifyView {
+- (void)alertModifyView
+{
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"修改套餐" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"完成", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     alertView.tag = 2;
@@ -116,7 +128,8 @@
     [alertView show];
 }
                                               
-- (void)alertCalibrateView {
+- (void)alertCalibrateView
+{
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"校准用量" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"完成", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     alertView.tag = 1;
@@ -127,7 +140,8 @@
 
 #pragma mark - UIAlertViewDelegate
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
     if (buttonIndex == 1 && [alertView textFieldAtIndex:0].text.length > 0) {
         if (alertView.tag == 1) {
             [GlobalHolder sharedSingleton].offsetFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
@@ -142,15 +156,18 @@
 
 #pragma mark - Handler
 
-- (IBAction)onCalibrateButtonClick:(id)sender {
+- (IBAction)onCalibrateButtonClick:(id)sender
+{
     [self alertCalibrateView];
 }
 
-- (IBAction)onModifyButtonClick:(id)sender {
+- (IBAction)onModifyButtonClick:(id)sender
+{
     [self alertModifyView];
 }
 
-- (void)onRefreshTimer {
+- (void)onRefreshTimer
+{
     [self updateFlowData];
 }
 

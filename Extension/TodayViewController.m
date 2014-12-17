@@ -31,7 +31,8 @@
 
 @implementation TodayViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self recoverFromFile];
     
@@ -41,11 +42,13 @@
     self.colorArray = [[NSArray alloc] initWithObjects:green, yellow, red, nil];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
-- (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
+- (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler
+{
     completionHandler(NCUpdateResultNewData);
     NSDate *nowDate = [NSDate date];
     if (self.lastDate && [self monthWithDate:nowDate] != [self monthWithDate:self.lastDate]
@@ -57,7 +60,8 @@
     [self updateNetworkFlow];
 }
 
-- (void)updateNetworkFlow {
+- (void)updateNetworkFlow
+{
     struct ifaddrs *ifa_list = 0, *ifa;
     if (getifaddrs(&ifa_list) == -1) {
         return;
@@ -132,7 +136,8 @@
     [self backupToFile];
 }
 
-- (NSString *)flowValueToStr:(int64_t)bytes {
+- (NSString *)flowValueToStr:(int64_t)bytes
+{
     if (bytes < 1000) {
         return [NSString stringWithFormat:@"%lluB", bytes];
     } else if (bytes >= 1000 && bytes < 1000 * 1000) {
@@ -144,7 +149,8 @@
     }
 }
 
-- (NSInteger)monthWithDate:(NSDate *)date {
+- (NSInteger)monthWithDate:(NSDate *)date
+{
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comp = [cal components:NSCalendarUnitMonth fromDate:date];
     return comp.month;
@@ -152,7 +158,8 @@
 
 #pragma mark - Persistance
 
-- (void)backupToFile {
+- (void)backupToFile
+{
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
     [userDefaults setObject:[NSNumber numberWithLongLong:self.limitFlow] forKey:@"limitFlow"];
     [userDefaults setObject:[NSNumber numberWithLongLong:self.lastFlow] forKey:@"lastFlow"];
@@ -161,7 +168,8 @@
     [userDefaults synchronize];
 }
 
-- (void)recoverFromFile {
+- (void)recoverFromFile
+{
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
     self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
     self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
@@ -172,7 +180,8 @@
 
 #pragma mark - Handler
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
     [self.extensionContext openURL:[NSURL URLWithString:@"NetAsistant://"] completionHandler:nil];
 }
 
