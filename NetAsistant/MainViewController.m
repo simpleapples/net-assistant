@@ -36,22 +36,25 @@
 {
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [[GlobalHolder sharedSingleton] recoverFromFile];
-    NSDate *nowDate = [NSDate date];
-    NSDate *lastDate = [GlobalHolder sharedSingleton].lastDate;
-    if ([GlobalHolder sharedSingleton].limitFlow <= 0) {
-        [self alertModifyView];
-    } else if ([self monthWithDate:nowDate] != [self monthWithDate:lastDate]
-               && [nowDate timeIntervalSince1970] > [lastDate timeIntervalSince1970]) {
-        [GlobalHolder sharedSingleton].offsetFlow = 0;
-        [GlobalHolder sharedSingleton].lastDate = [NSDate date];
-        [[GlobalHolder sharedSingleton] backupToFile];
-    }
-    [self updateFlowData];
-    
-    self.refreshTimer = nil;
-    self.refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:self.refreshTimer forMode:NSDefaultRunLoopMode];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[GlobalHolder sharedSingleton] recoverFromFile];
+        NSDate *nowDate = [NSDate date];
+        NSDate *lastDate = [GlobalHolder sharedSingleton].lastDate;
+        if ([GlobalHolder sharedSingleton].limitFlow <= 0) {
+            [self alertModifyView];
+        } else if ([self monthWithDate:nowDate] != [self monthWithDate:lastDate]
+                   && [nowDate timeIntervalSince1970] > [lastDate timeIntervalSince1970]) {
+            [GlobalHolder sharedSingleton].offsetFlow = 0;
+            [GlobalHolder sharedSingleton].lastDate = [NSDate date];
+            [[GlobalHolder sharedSingleton] backupToFile];
+        }
+        self.refreshTimer = nil;
+        self.refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:self.refreshTimer forMode:NSDefaultRunLoopMode];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateFlowData];
+        });
+    });
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -70,6 +73,10 @@
     NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
     if (networkFlow) {
         int64_t usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
+        [GlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
+        [GlobalHolder sharedSingleton].offsetFlow = usedFlow;
+        [GlobalHolder sharedSingleton].lastDate = [NSDate date];
+        
         int64_t remainFlow = [GlobalHolder sharedSingleton].limitFlow - usedFlow;
         int64_t limitFlow = [GlobalHolder sharedSingleton].limitFlow;
         if (remainFlow > 0) {
@@ -90,9 +97,6 @@
             self.limitFlowLabel.text = [self flowValueToStr:limitFlow];
         }
         self.wwanFlowLabel.text = [self flowValueToStr:usedFlow];
-        [GlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
-        [GlobalHolder sharedSingleton].offsetFlow = usedFlow;
-        [GlobalHolder sharedSingleton].lastDate = [NSDate date];
     }
 }
 
