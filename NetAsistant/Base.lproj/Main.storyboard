@@ -141,6 +141,9 @@
                                 <state key="normal" image="IconMore">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="exclusiveTouch" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="zhd-fp-Gh5" kind="show" id="FC3-Jz-jzA"/>
                                 </connections>
