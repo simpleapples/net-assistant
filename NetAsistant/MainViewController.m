@@ -51,9 +51,7 @@
         self.refreshTimer = nil;
         self.refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
         [[NSRunLoop mainRunLoop] addTimer:self.refreshTimer forMode:NSDefaultRunLoopMode];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self updateFlowData];
-        });
+        [self updateFlowData];
     });
 }
 
@@ -70,34 +68,39 @@
 
 - (void)updateFlowData
 {
-    NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
-    if (networkFlow) {
-        int64_t usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
-        [GlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
-        [GlobalHolder sharedSingleton].offsetFlow = usedFlow;
-        [GlobalHolder sharedSingleton].lastDate = [NSDate date];
-        
-        int64_t remainFlow = [GlobalHolder sharedSingleton].limitFlow - usedFlow;
-        int64_t limitFlow = [GlobalHolder sharedSingleton].limitFlow;
-        if (remainFlow > 0) {
-            NSInteger percent = remainFlow * 100.0f / limitFlow;
-            self.flowPercentLabel.text = [NSString stringWithFormat:@"%ld", (long)percent];
-            if (percent < 10) {
-                self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
-            } else if (percent < 20) {
-                self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_WARNNING];
-            } else {
-                self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_NORMAL];
-            }
-        } else {
-            self.flowPercentLabel.text = @"0";
-            self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
+        if (networkFlow) {
+            int64_t usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
+            [GlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
+            [GlobalHolder sharedSingleton].offsetFlow = usedFlow;
+            [GlobalHolder sharedSingleton].lastDate = [NSDate date];
+            
+            int64_t remainFlow = [GlobalHolder sharedSingleton].limitFlow - usedFlow;
+            int64_t limitFlow = [GlobalHolder sharedSingleton].limitFlow;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (remainFlow > 0) {
+                    NSInteger percent = remainFlow * 100.0f / limitFlow;
+                    self.flowPercentLabel.text = [NSString stringWithFormat:@"%ld", (long)percent];
+                    if (percent < 10) {
+                        self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
+                    } else if (percent < 20) {
+                        self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_WARNNING];
+                    } else {
+                        self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_NORMAL];
+                    }
+                } else {
+                    self.flowPercentLabel.text = @"0";
+                    self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
+                }
+                if (limitFlow > 0) {
+                    self.limitFlowLabel.text = [self flowValueToStr:limitFlow];
+                }
+                self.wwanFlowLabel.text = [self flowValueToStr:usedFlow];
+            });
         }
-        if (limitFlow > 0) {
-            self.limitFlowLabel.text = [self flowValueToStr:limitFlow];
-        }
-        self.wwanFlowLabel.text = [self flowValueToStr:usedFlow];
-    }
+    });
 }
 
 - (NSString *)flowValueToStr:(int64_t)bytes
@@ -109,7 +112,7 @@
     } else if (bytes >= 1000 * 1000 && bytes < 1000 * 1000 * 1000) {
         return [NSString stringWithFormat:@"%.2fMB", 1.0 * bytes / (1000 * 1000)];
     } else {
-        return [NSString stringWithFormat:@"%.3fGB", 1.0 * bytes / (1000 * 1000 * 1000)];
+        return [NSString stringWithFormat:@"%.2fGB", 1.0 * bytes / (1000 * 1000 * 1000)];
     }
 }
 
@@ -124,22 +127,30 @@
 
 - (void)alertModifyView
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"修改套餐" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"完成", nil];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    alertView.tag = 2;
-    [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
-    [alertView textFieldAtIndex:0].placeholder = @"请输入套餐流量（单位MB）";
-    [alertView show];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"修改套餐" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"完成", nil];
+        alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+        alertView.tag = 2;
+        [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
+        [alertView textFieldAtIndex:0].placeholder = @"请输入套餐流量（单位MB）";
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alertView show];
+        });
+    });
 }
                                               
 - (void)alertCalibrateView
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"校准用量" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"完成", nil];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    alertView.tag = 1;
-    [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
-    [alertView textFieldAtIndex:0].placeholder = @"请输入已使用流量（单位MB）";
-    [alertView show];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"校准用量" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"完成", nil];
+        alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+        alertView.tag = 1;
+        [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
+        [alertView textFieldAtIndex:0].placeholder = @"请输入已使用流量（单位MB）";
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alertView show];
+        });
+    });
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -153,8 +164,10 @@
         } else if (alertView.tag == 2) {
             [GlobalHolder sharedSingleton].limitFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
         }
-        [self updateFlowData];
-        [[GlobalHolder sharedSingleton] backupToFile];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self updateFlowData];
+            [[GlobalHolder sharedSingleton] backupToFile];
+        });
     }
 }
 
