@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		5A451CE919CD6DE100F21478 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A451CE819CD6DE100F21478 /* NotificationCenter.framework */; };
 		5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A451CEE19CD6DE100F21478 /* TodayViewController.m */; };
-		5A451CF119CD6DE100F21478 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A451CF019CD6DE100F21478 /* MainInterface.storyboard */; };
 		5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A451CE719CD6DE100F21478 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5AB140B01A59258C0027C784 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB140AE1A59258C0027C784 /* MainInterface.storyboard */; };
 		5AC5CBBA1A298086001DD8CC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC5CBB91A298086001DD8CC /* MessageUI.framework */; };
 		5AC5CBBD1A2982CD001DD8CC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5CBBC1A2982CD001DD8CC /* AboutViewController.m */; };
 		5AC874A919EFCF5200CFBD24 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC874A819EFCF5200CFBD24 /* InfoViewController.m */; };
@@ -70,9 +70,10 @@
 		5A451CEC19CD6DE100F21478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A451CED19CD6DE100F21478 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		5A451CEE19CD6DE100F21478 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
-		5A451CF019CD6DE100F21478 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		5A7BCE9919E7C6A1005F01F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5A7BCE9A19E7C6A1005F01F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5AB140B21A5925ED0027C784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5AB140B31A5926080027C784 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		5AC5CBB91A298086001DD8CC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5AC5CBBB1A2982CD001DD8CC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		5AC5CBBC1A2982CD001DD8CC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
@@ -136,7 +137,7 @@
 				5AE39F2219D0139900AEC2F0 /* Extension.entitlements */,
 				5A451CED19CD6DE100F21478 /* TodayViewController.h */,
 				5A451CEE19CD6DE100F21478 /* TodayViewController.m */,
-				5A451CF019CD6DE100F21478 /* MainInterface.storyboard */,
+				5AB140AE1A59258C0027C784 /* MainInterface.storyboard */,
 				5A451CEB19CD6DE100F21478 /* Supporting Files */,
 			);
 			path = Extension;
@@ -358,6 +359,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 5AED301819CD47F70098DC57;
 			productRefGroup = 5AED302219CD47F70098DC57 /* Products */;
@@ -376,7 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A451CF119CD6DE100F21478 /* MainInterface.storyboard in Resources */,
+				5AB140B01A59258C0027C784 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +454,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5AB140AE1A59258C0027C784 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB140B21A5925ED0027C784 /* Base */,
+				5AB140B31A5926080027C784 /* zh-Hans */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		5AED302E19CD47F70098DC57 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
