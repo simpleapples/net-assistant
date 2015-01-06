@@ -1,0 +1,60 @@
+
+/* Class = "IBUILabel"; text = "剩余"; ObjectID = "2C6-cQ-HkJ"; */
+"2C6-cQ-HkJ.text" = "Left";
+
+/* Class = "IBUILabel"; text = "第一步：下滑打开通知栏，点击「编辑」"; ObjectID = "4H4-Eb-5jK"; */
+"4H4-Eb-5jK.text" = "Step 1：下滑打开通知栏，点击「编辑」";
+
+/* Class = "IBUIButton"; normalTitle = "校准用量"; ObjectID = "5Xv-Vf-7ba"; */
+"5Xv-Vf-7ba.normalTitle" = "Standard";
+
+/* Class = "IBUIButton"; normalTitle = "修改套餐"; ObjectID = "CmJ-E3-dwk"; */
+"CmJ-E3-dwk.normalTitle" = "Upgrade";
+
+/* Class = "IBUIViewController"; title = "InfoViewController"; ObjectID = "Ev1-gI-f1H"; */
+"Ev1-gI-f1H.title" = "InfoViewController";
+
+/* Class = "IBUILabel"; text = "反馈问题"; ObjectID = "OzG-9S-gka"; */
+"OzG-9S-gka.text" = "Feedback";
+
+/* Class = "IBUILabel"; text = "版本"; ObjectID = "Qcn-Ri-mw1"; */
+"Qcn-Ri-mw1.text" = "Version";
+
+/* Class = "IBUILabel"; text = "%"; ObjectID = "Scd-f7-iU3"; */
+"Scd-f7-iU3.text" = "%";
+
+/* Class = "IBUIButton"; normalTitle = " Widget使用指南"; ObjectID = "YC9-Zc-Mx7"; */
+"YC9-Zc-Mx7.normalTitle" = " Widget Guide";
+
+/* Class = "IBUITableViewSection"; headerTitle = "反馈"; ObjectID = "ZJp-k8-RoC"; */
+"ZJp-k8-RoC.headerTitle" = "Feedback";
+
+/* Class = "IBUILabel"; text = "90"; ObjectID = "dCa-nA-6Fx"; */
+"dCa-nA-6Fx.text" = "90";
+
+/* Class = "IBUILabel"; text = "1.0 "; ObjectID = "eV2-Ai-dat"; */
+"eV2-Ai-dat.text" = "1.0 ";
+
+/* Class = "IBUILabel"; text = "0B"; ObjectID = "fnS-vR-4Bd"; */
+"fnS-vR-4Bd.text" = "0B";
+
+/* Class = "IBUITableViewSection"; headerTitle = "关于"; ObjectID = "o6S-2e-nZs"; */
+"o6S-2e-nZs.headerTitle" = "About";
+
+/* Class = "IBUILabel"; text = "0B"; ObjectID = "pwf-6A-GaQ"; */
+"pwf-6A-GaQ.text" = "0B";
+
+/* Class = "IBUINavigationItem"; title = "关于"; ObjectID = "qYS-aU-Icd"; */
+"qYS-aU-Icd.title" = "About";
+
+/* Class = "IBUILabel"; text = "第二步：点击「上网助手」前的加号，完成后点击右上角「完成」"; ObjectID = "slc-Cg-ta9"; */
+"slc-Cg-ta9.text" = "Step 2：点击「上网助手」前的加号，完成后点击右上角「完成」";
+
+/* Class = "IBUILabel"; text = "为上网助手评分"; ObjectID = "tjd-7g-1yA"; */
+"tjd-7g-1yA.text" = "Rate";
+
+/* Class = "IBUIViewController"; title = "MainViewController"; ObjectID = "vXZ-lx-hvc"; */
+"vXZ-lx-hvc.title" = "MainViewController";
+
+/* Class = "IBUITableViewController"; title = "AboutViewController"; ObjectID = "zhd-fp-Gh5"; */
+"zhd-fp-Gh5.title" = "AboutViewController";

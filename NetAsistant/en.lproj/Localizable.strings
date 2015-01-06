@@ -1,0 +1,24 @@
+/* 
+  Localization.strings
+  NetAsistant
+
+  Created by Zzy on 1/6/15.
+  Copyright (c) 2015 Zzy. All rights reserved.
+*/
+
+//邮件反馈
+"设备: %@ %@, 软件版本: %@ \n\n请在这里填写您的反馈内容" = "Device: %@ %@, Software Version: %@ \n\nPlease input your feedback:";
+"用户反馈" = "Feedback";
+"无法使用您的邮箱" = "Mail Unavailable";
+"请在邮件应用中添加邮箱后再试" = "Please add a mailbox";
+
+//主界面
+"请输入套餐流量（单位MB）" = "Input Package (MB)";
+"校准用量" = "Standard Package";
+"请输入已使用流量（单位MB）" = "Standard Package (MB)";
+"修改套餐" = "Upgrade Package";
+
+//Alert
+"取消" = "Cancel";
+"确定" = "Confirm";
+"完成" = "Done";

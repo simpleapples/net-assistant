@@ -1,0 +1,15 @@
+
+/* Class = "IBUILabel"; text = "套餐总量: 0KB"; ObjectID = "Bj7-dp-Ceb"; */
+"Bj7-dp-Ceb.text" = "Total: 0KB";
+
+/* Class = "IBUILabel"; text = "0KB"; ObjectID = "X3r-q9-Zt7"; */
+"X3r-q9-Zt7.text" = "0KB";
+
+/* Class = "IBUILabel"; text = "0KB"; ObjectID = "XXt-5a-Gb6"; */
+"XXt-5a-Gb6.text" = "0KB";
+
+/* Class = "IBUILabel"; text = "剩余:"; ObjectID = "dBy-tj-0si"; */
+"dBy-tj-0si.text" = "Left:";
+
+/* Class = "IBUILabel"; text = "已用:"; ObjectID = "rBd-4S-aMT"; */
+"rBd-4S-aMT.text" = "Used:";

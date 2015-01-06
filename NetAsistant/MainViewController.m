@@ -128,11 +128,11 @@
 - (void)alertModifyView
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"修改套餐" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"完成", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"修改套餐", nil) message:nil delegate:self cancelButtonTitle:NSLocalizedString(@"取消", nil) otherButtonTitles:NSLocalizedString(@"完成", nil), nil];
         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
         alertView.tag = 2;
         [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
-        [alertView textFieldAtIndex:0].placeholder = @"请输入套餐流量（单位MB）";
+        [alertView textFieldAtIndex:0].placeholder = NSLocalizedString(@"请输入套餐流量（单位MB）", nil);
         dispatch_async(dispatch_get_main_queue(), ^{
             [alertView show];
         });
@@ -142,11 +142,11 @@
 - (void)alertCalibrateView
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"校准用量" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"完成", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"校准用量", nil) message:nil delegate:self cancelButtonTitle:NSLocalizedString(@"取消", nil) otherButtonTitles:NSLocalizedString(@"完成", nil), nil];
         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
         alertView.tag = 1;
         [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
-        [alertView textFieldAtIndex:0].placeholder = @"请输入已使用流量（单位MB）";
+        [alertView textFieldAtIndex:0].placeholder = NSLocalizedString(@"请输入已使用流量（单位MB）", nil);
         dispatch_async(dispatch_get_main_queue(), ^{
             [alertView show];
         });

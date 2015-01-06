@@ -49,17 +49,18 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
+            
             NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
             NSString *versionStr = [NSString stringWithFormat:@"%@ Build %@", [info objectForKey:@"CFBundleShortVersionString"], [info objectForKey:@"CFBundleVersion"]];
-            NSString *message = [[NSString alloc] initWithFormat:@"设备: %@ %@, 软件版本: %@ \n\n请在这里填写您的反馈内容", [[UIDevice currentDevice] systemName], [[UIDevice currentDevice] systemVersion], versionStr];
+            NSString *message = [[NSString alloc] initWithFormat:NSLocalizedString(@"设备: %@ %@, 软件版本: %@ \n\n请在这里填写您的反馈内容", nil), [[UIDevice currentDevice] systemName], [[UIDevice currentDevice] systemVersion], versionStr];
             __weak id target = self;
             MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
             mailViewController.mailComposeDelegate = target;
             [mailViewController setToRecipients:@[@"netassistant@simpleapples.com"]];
-            [mailViewController setSubject:@"用户反馈"];
+            [mailViewController setSubject:NSLocalizedString(@"用户反馈", nil)];
             [mailViewController setMessageBody:message isHTML:NO];
             if (![MFMailComposeViewController canSendMail]) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"无法使用您的邮箱" message:@"请在邮件应用中添加邮箱后再试" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"无法使用您的邮箱", nil) message:NSLocalizedString(@"请在邮件应用中添加邮箱后再试", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"取消", nil) otherButtonTitles:NSLocalizedString(@"确定", nil), nil];
                 [alertView show];
             } else {
                 [self presentViewController:mailViewController animated:YES completion:nil];
