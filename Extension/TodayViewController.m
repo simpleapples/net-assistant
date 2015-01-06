@@ -121,7 +121,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             int64_t usedFlow = wwanFlow - self.lastFlow + self.offsetFlow;
             self.usedFlowLabel.text = [self flowValueToStr:usedFlow];
-            self.limitFlowLabel.text = [NSString stringWithFormat:@"套餐总量: %@", [self flowValueToStr:self.limitFlow]];
+            self.limitFlowLabel.text = [NSString stringWithFormat:NSLocalizedString(@"套餐总量: %@", nil), [self flowValueToStr:self.limitFlow]];
             int64_t unusedFlow = self.limitFlow - usedFlow;
             if (unusedFlow < 0) {
                 unusedFlow = 0;
