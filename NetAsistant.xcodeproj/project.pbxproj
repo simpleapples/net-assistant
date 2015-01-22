@@ -23,7 +23,6 @@
 		5AED302D19CD47F70098DC57 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302C19CD47F70098DC57 /* MainViewController.m */; };
 		5AED303019CD47F70098DC57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AED302E19CD47F70098DC57 /* Main.storyboard */; };
 		5AED303219CD47F70098DC57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AED303119CD47F70098DC57 /* Images.xcassets */; };
-		5AED303519CD47F70098DC57 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AED303319CD47F70098DC57 /* LaunchScreen.xib */; };
 		5AED304119CD47F70098DC57 /* NetAsistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED304019CD47F70098DC57 /* NetAsistantTests.m */; };
 		5AED304E19CD49950098DC57 /* GlobalHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED304D19CD49950098DC57 /* GlobalHolder.m */; };
 		5AED305119CD49F10098DC57 /* NetworkFlowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED305019CD49F10098DC57 /* NetworkFlowService.m */; };
@@ -85,10 +84,8 @@
 		5A5C27861A5BD80700EFAA46 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5A5C27871A5BD80700EFAA46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A7BCE9919E7C6A1005F01F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		5A7BCE9A19E7C6A1005F01F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		5AA08AB11A5BC5F500A9DBB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		5AA08AB21A5BC5F600A9DBB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		5AA08AB31A5BC5F600A9DBB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5AA08AB71A5BCCE000A9DBB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AA08AB91A5BCCE300A9DBB1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5AA08ABA1A5BCCE300A9DBB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -109,7 +106,6 @@
 		5AED302C19CD47F70098DC57 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		5AED302F19CD47F70098DC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AED303119CD47F70098DC57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5AED303419CD47F70098DC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5AED303A19CD47F70098DC57 /* NetAsistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetAsistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AED303F19CD47F70098DC57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AED304019CD47F70098DC57 /* NetAsistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetAsistantTests.m; sourceTree = "<group>"; };
@@ -204,7 +200,6 @@
 				5AED302919CD47F70098DC57 /* AppDelegate.m */,
 				5AED302E19CD47F70098DC57 /* Main.storyboard */,
 				5AED303119CD47F70098DC57 /* Images.xcassets */,
-				5AED303319CD47F70098DC57 /* LaunchScreen.xib */,
 				5AED302419CD47F70098DC57 /* Supporting Files */,
 			);
 			path = NetAsistant;
@@ -414,7 +409,6 @@
 			files = (
 				5AED303019CD47F70098DC57 /* Main.storyboard in Resources */,
 				5AA08AB61A5BCCE000A9DBB1 /* Localizable.strings in Resources */,
-				5AED303519CD47F70098DC57 /* LaunchScreen.xib in Resources */,
 				5AED303219CD47F70098DC57 /* Images.xcassets in Resources */,
 				5A5C27751A5BD4E700EFAA46 /* InfoPlist.strings in Resources */,
 			);
@@ -548,16 +542,6 @@
 				5AA08AB21A5BC5F600A9DBB1 /* en */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5AED303319CD47F70098DC57 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5AED303419CD47F70098DC57 /* Base */,
-				5A7BCE9A19E7C6A1005F01F7 /* zh-Hans */,
-				5AA08AB31A5BC5F600A9DBB1 /* en */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
