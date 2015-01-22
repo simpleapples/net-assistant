@@ -10,6 +10,7 @@
 		5A451CE919CD6DE100F21478 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A451CE819CD6DE100F21478 /* NotificationCenter.framework */; };
 		5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A451CEE19CD6DE100F21478 /* TodayViewController.m */; };
 		5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A451CE719CD6DE100F21478 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A4F03BB1A70CA0D0050BD32 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4F03BA1A70CA0D0050BD32 /* LaunchScreen.xib */; };
 		5A5C27751A5BD4E700EFAA46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27771A5BD4E700EFAA46 /* InfoPlist.strings */; };
 		5A5C277E1A5BD7A300EFAA46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27801A5BD7A300EFAA46 /* InfoPlist.strings */; };
 		5A5C27831A5BD80600EFAA46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27851A5BD80600EFAA46 /* Localizable.strings */; };
@@ -73,6 +74,7 @@
 		5A451CEC19CD6DE100F21478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A451CED19CD6DE100F21478 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		5A451CEE19CD6DE100F21478 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		5A4F03BA1A70CA0D0050BD32 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		5A5C276F1A5BD44700EFAA46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		5A5C27761A5BD4E700EFAA46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5A5C27781A5BD4E800EFAA46 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				5AED302E19CD47F70098DC57 /* Main.storyboard */,
 				5AED303119CD47F70098DC57 /* Images.xcassets */,
 				5AED302419CD47F70098DC57 /* Supporting Files */,
+				5A4F03BA1A70CA0D0050BD32 /* LaunchScreen.xib */,
 			);
 			path = NetAsistant;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4F03BB1A70CA0D0050BD32 /* LaunchScreen.xib in Resources */,
 				5AED303019CD47F70098DC57 /* Main.storyboard in Resources */,
 				5AA08AB61A5BCCE000A9DBB1 /* Localizable.strings in Resources */,
 				5AED303219CD47F70098DC57 /* Images.xcassets in Resources */,
