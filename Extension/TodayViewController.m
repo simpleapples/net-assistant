@@ -119,7 +119,12 @@
         freeifaddrs(ifa_list);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            int64_t usedFlow = wwanFlow - self.lastFlow + self.offsetFlow;
+            int64_t usedFlow = 0;
+            if (wwanFlow >= self.lastFlow) {
+                usedFlow = wwanFlow - self.lastFlow + self.offsetFlow;
+            } else {
+                usedFlow = self.offsetFlow;
+            }
             self.usedFlowLabel.text = [self flowValueToStr:usedFlow];
             self.limitFlowLabel.text = [NSString stringWithFormat:NSLocalizedString(@"套餐总量: %@", nil), [self flowValueToStr:self.limitFlow]];
             int64_t unusedFlow = self.limitFlow - usedFlow;

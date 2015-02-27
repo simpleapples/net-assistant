@@ -71,7 +71,12 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
         if (networkFlow) {
-            int64_t usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
+            int64_t usedFlow = 0;
+            if (networkFlow.wwanFlow >= [GlobalHolder sharedSingleton].lastFlow) {
+                usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
+            } else {
+                usedFlow = [GlobalHolder sharedSingleton].offsetFlow;
+            }
             [GlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
             [GlobalHolder sharedSingleton].offsetFlow = usedFlow;
             [GlobalHolder sharedSingleton].lastDate = [NSDate date];
