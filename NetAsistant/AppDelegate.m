@@ -10,6 +10,7 @@
 #import "GlobalHolder.h"
 #import "NetworkFlowService.h"
 #import "NetworkFlow.h"
+#import "MobClick.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,10 @@
 {
     application.statusBarHidden = NO;
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    [MobClick startWithAppkey:@"54f041e7fd98c5f4e80001b4"];
+    NSString *version = [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+    [MobClick setEncryptEnabled:YES];
     return YES;
 }
 

@@ -15,6 +15,8 @@
 		5A5C277E1A5BD7A300EFAA46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27801A5BD7A300EFAA46 /* InfoPlist.strings */; };
 		5A5C27831A5BD80600EFAA46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27851A5BD80600EFAA46 /* Localizable.strings */; };
 		5AA08AB61A5BCCE000A9DBB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AA08AB81A5BCCE000A9DBB1 /* Localizable.strings */; };
+		5AAE63F51AA15CAA00AB99E6 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAE63F21AA15CAA00AB99E6 /* libMobClickLibrary.a */; };
+		5AAE63F71AA15E6300AB99E6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAE63F61AA15E6300AB99E6 /* libz.dylib */; };
 		5AB140B01A59258C0027C784 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB140AE1A59258C0027C784 /* MainInterface.storyboard */; };
 		5AC5CBBA1A298086001DD8CC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC5CBB91A298086001DD8CC /* MessageUI.framework */; };
 		5AC5CBBD1A2982CD001DD8CC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5CBBC1A2982CD001DD8CC /* AboutViewController.m */; };
@@ -91,6 +93,10 @@
 		5AA08AB71A5BCCE000A9DBB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AA08AB91A5BCCE300A9DBB1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5AA08ABA1A5BCCE300A9DBB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5AAE63F21AA15CAA00AB99E6 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		5AAE63F31AA15CAA00AB99E6 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		5AAE63F41AA15CAA00AB99E6 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
+		5AAE63F61AA15E6300AB99E6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5AB140B21A5925ED0027C784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5AB140B31A5926080027C784 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		5AC5CBB91A298086001DD8CC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -134,7 +140,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AAE63F71AA15E6300AB99E6 /* libz.dylib in Frameworks */,
 				5AC5CBBA1A298086001DD8CC /* MessageUI.framework in Frameworks */,
+				5AAE63F51AA15CAA00AB99E6 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +178,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5AAE63F01AA15CA100AB99E6 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				5AAE63F11AA15CAA00AB99E6 /* Umeng */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		5AAE63F11AA15CAA00AB99E6 /* Umeng */ = {
+			isa = PBXGroup;
+			children = (
+				5AAE63F21AA15CAA00AB99E6 /* libMobClickLibrary.a */,
+				5AAE63F31AA15CAA00AB99E6 /* MobClick.h */,
+				5AAE63F41AA15CAA00AB99E6 /* MobClickSocialAnalytics.h */,
+			);
+			path = Umeng;
+			sourceTree = "<group>";
+		};
 		5AED301819CD47F70098DC57 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +220,7 @@
 		5AED302319CD47F70098DC57 /* NetAsistant */ = {
 			isa = PBXGroup;
 			children = (
+				5AAE63F01AA15CA100AB99E6 /* Libs */,
 				5AE39F2119D0134000AEC2F0 /* NetAsistant.entitlements */,
 				5AED305219CD4A3E0098DC57 /* Model */,
 				5AED304B19CD497D0098DC57 /* Service */,
@@ -272,6 +299,7 @@
 		5AED308B19CD4BC40098DC57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AAE63F61AA15E6300AB99E6 /* libz.dylib */,
 				5AC5CBB91A298086001DD8CC /* MessageUI.framework */,
 				5AED308C19CD4CF80098DC57 /* CoreGraphics.framework */,
 				5AED305619CD4B6D0098DC57 /* Foundation.framework */,
@@ -677,6 +705,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetAsistant/GoogleMobileAdsSdkiOS",
+					"$(PROJECT_DIR)/NetAsistant/Umeng",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -696,6 +725,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetAsistant/GoogleMobileAdsSdkiOS",
+					"$(PROJECT_DIR)/NetAsistant/Umeng",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
