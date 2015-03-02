@@ -1,13 +1,14 @@
 //
-//  InfoViewController.h
+//  ViewController.h
 //  NetAsistant
 //
-//  Created by Zzy on 10/16/14.
+//  Created by Zzy on 9/20/14.
 //  Copyright (c) 2014 Zzy. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface InfoViewController : UIViewController
+@interface SAMainViewController : UIViewController
 
 @end
+

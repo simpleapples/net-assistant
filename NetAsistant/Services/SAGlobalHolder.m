@@ -6,23 +6,23 @@
 //  Copyright (c) 2014 Zzy. All rights reserved.
 //
 
-#import "GlobalHolder.h"
+#import "SAGlobalHolder.h"
 
-@interface GlobalHolder ()
+@interface SAGlobalHolder ()
 
 @property (strong, nonatomic) NSArray *colorArray;
 
 @end
 
-@implementation GlobalHolder
+@implementation SAGlobalHolder
 
-+ (GlobalHolder *)sharedSingleton
++ (SAGlobalHolder *)sharedSingleton
 {
-    static GlobalHolder *sharedSingleton;
+    static SAGlobalHolder *sharedSingleton;
     static dispatch_once_t onceToken = 0;
     dispatch_once(&onceToken, ^{
         if (!sharedSingleton) {
-            sharedSingleton = [[GlobalHolder alloc] init];
+            sharedSingleton = [[SAGlobalHolder alloc] init];
         }
     });
     return sharedSingleton;

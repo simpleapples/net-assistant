@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Zzy. All rights reserved.
 //
 
-#import "MainViewController.h"
-#import "NetworkFlowService.h"
-#import "NetworkFlow.h"
-#import "GlobalHolder.h"
+#import "SAMainViewController.h"
+#import "SANetworkFlowService.h"
+#import "SANetworkFlow.h"
+#import "SAGlobalHolder.h"
 
-@interface MainViewController () <UIAlertViewDelegate>
+@interface SAMainViewController () <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *flowPercentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wwanFlowLabel;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation MainViewController
+@implementation SAMainViewController
 
 - (void)viewDidLoad
 {
@@ -37,16 +37,16 @@
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[GlobalHolder sharedSingleton] recoverFromFile];
+        [[SAGlobalHolder sharedSingleton] recoverFromFile];
         NSDate *nowDate = [NSDate date];
-        NSDate *lastDate = [GlobalHolder sharedSingleton].lastDate;
-        if ([GlobalHolder sharedSingleton].limitFlow <= 0) {
+        NSDate *lastDate = [SAGlobalHolder sharedSingleton].lastDate;
+        if ([SAGlobalHolder sharedSingleton].limitFlow <= 0) {
             [self alertModifyView];
         } else if ([self monthWithDate:nowDate] != [self monthWithDate:lastDate]
                    && [nowDate timeIntervalSince1970] > [lastDate timeIntervalSince1970]) {
-            [GlobalHolder sharedSingleton].offsetFlow = 0;
-            [GlobalHolder sharedSingleton].lastDate = [NSDate date];
-            [[GlobalHolder sharedSingleton] backupToFile];
+            [SAGlobalHolder sharedSingleton].offsetFlow = 0;
+            [SAGlobalHolder sharedSingleton].lastDate = [NSDate date];
+            [[SAGlobalHolder sharedSingleton] backupToFile];
         }
         self.refreshTimer = nil;
         self.refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
@@ -69,35 +69,35 @@
 - (void)updateFlowData
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
+        SANetworkFlow *networkFlow = [SANetworkFlowService networkFlow];
         if (networkFlow) {
             int64_t usedFlow = 0;
-            if (networkFlow.wwanFlow >= [GlobalHolder sharedSingleton].lastFlow) {
-                usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
+            if (networkFlow.wwanFlow >= [SAGlobalHolder sharedSingleton].lastFlow) {
+                usedFlow = networkFlow.wwanFlow - [SAGlobalHolder sharedSingleton].lastFlow + [SAGlobalHolder sharedSingleton].offsetFlow;
             } else {
-                usedFlow = [GlobalHolder sharedSingleton].offsetFlow;
+                usedFlow = [SAGlobalHolder sharedSingleton].offsetFlow;
             }
-            [GlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
-            [GlobalHolder sharedSingleton].offsetFlow = usedFlow;
-            [GlobalHolder sharedSingleton].lastDate = [NSDate date];
+            [SAGlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
+            [SAGlobalHolder sharedSingleton].offsetFlow = usedFlow;
+            [SAGlobalHolder sharedSingleton].lastDate = [NSDate date];
             
-            int64_t remainFlow = [GlobalHolder sharedSingleton].limitFlow - usedFlow;
-            int64_t limitFlow = [GlobalHolder sharedSingleton].limitFlow;
+            int64_t remainFlow = [SAGlobalHolder sharedSingleton].limitFlow - usedFlow;
+            int64_t limitFlow = [SAGlobalHolder sharedSingleton].limitFlow;
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (remainFlow > 0) {
                     NSInteger percent = remainFlow * 100.0f / limitFlow;
                     self.flowPercentLabel.text = [NSString stringWithFormat:@"%ld", (long)percent];
                     if (percent < 10) {
-                        self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
+                        self.view.backgroundColor = [[SAGlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
                     } else if (percent < 20) {
-                        self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_WARNNING];
+                        self.view.backgroundColor = [[SAGlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_WARNNING];
                     } else {
-                        self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_NORMAL];
+                        self.view.backgroundColor = [[SAGlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_NORMAL];
                     }
                 } else {
                     self.flowPercentLabel.text = @"0";
-                    self.view.backgroundColor = [[GlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
+                    self.view.backgroundColor = [[SAGlobalHolder sharedSingleton] colorWithType:COLOR_TYPE_ERROR];
                 }
                 if (limitFlow > 0) {
                     self.limitFlowLabel.text = [self flowValueToStr:limitFlow];
@@ -164,14 +164,14 @@
 {
     if (buttonIndex == 1 && [alertView textFieldAtIndex:0].text.length > 0) {
         if (alertView.tag == 1) {
-            [GlobalHolder sharedSingleton].offsetFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
-            [GlobalHolder sharedSingleton].lastDate = [NSDate date];
+            [SAGlobalHolder sharedSingleton].offsetFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
+            [SAGlobalHolder sharedSingleton].lastDate = [NSDate date];
         } else if (alertView.tag == 2) {
-            [GlobalHolder sharedSingleton].limitFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
+            [SAGlobalHolder sharedSingleton].limitFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
         }
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [self updateFlowData];
-            [[GlobalHolder sharedSingleton] backupToFile];
+            [[SAGlobalHolder sharedSingleton] backupToFile];
         });
     }
 }

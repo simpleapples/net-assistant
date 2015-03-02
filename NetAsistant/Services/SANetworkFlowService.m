@@ -1,20 +1,20 @@
 //
-//  SystemService.m
+//  SANetworkFlowService.m
 //  NetAsistant
 //
 //  Created by Zzy on 9/20/14.
 //  Copyright (c) 2014 Zzy. All rights reserved.
 //
 
-#import "NetworkFlowService.h"
-#import "NetworkFlow.h"
+#import "SANetworkFlowService.h"
+#import "SANetworkFlow.h"
 #include <ifaddrs.h>
 #include <sys/socket.h>
 #include <net/if.h>
 
-@implementation NetworkFlowService
+@implementation SANetworkFlowService
 
-+ (NetworkFlow *)networkFlow
++ (SANetworkFlow *)networkFlow
 {
     struct ifaddrs *ifa_list = 0, *ifa;
     if (getifaddrs(&ifa_list) == -1) {
@@ -62,7 +62,7 @@
     }
     freeifaddrs(ifa_list);
     
-    NetworkFlow *networkFlow = [[NetworkFlow alloc] initWithAllFlow:allFlow allInFlow:iBytes allOutFlow:oBytes wifiFlow:wifiIBytes wifiInFlow:wifiIBytes wifiOutFlow:wifiOBytes wwanFlow:wwanFlow wwanInFlow:wwanIBytes wwanOutFlow:wwanOBytes];
+    SANetworkFlow *networkFlow = [[SANetworkFlow alloc] initWithAllFlow:allFlow allInFlow:iBytes allOutFlow:oBytes wifiFlow:wifiIBytes wifiInFlow:wifiIBytes wifiOutFlow:wifiOBytes wwanFlow:wwanFlow wwanInFlow:wwanIBytes wwanOutFlow:wwanOBytes];
     return networkFlow;
 }
 

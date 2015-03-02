@@ -11,25 +11,25 @@
 		5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A451CEE19CD6DE100F21478 /* TodayViewController.m */; };
 		5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A451CE719CD6DE100F21478 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5A4F03BB1A70CA0D0050BD32 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4F03BA1A70CA0D0050BD32 /* LaunchScreen.xib */; };
+		5A58F52D1AA45C440069D40B /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A58F52B1AA45C440069D40B /* libMobClickLibrary.a */; };
+		5A58F5311AA45C5F0069D40B /* SANetworkFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5301AA45C5F0069D40B /* SANetworkFlow.m */; };
+		5A58F5371AA45C940069D40B /* SAGlobalHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5341AA45C940069D40B /* SAGlobalHolder.m */; };
+		5A58F5381AA45C940069D40B /* SANetworkFlowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5361AA45C940069D40B /* SANetworkFlowService.m */; };
+		5A58F5401AA45CF60069D40B /* SAAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F53B1AA45CF60069D40B /* SAAboutViewController.m */; };
+		5A58F5411AA45CF60069D40B /* SAInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F53D1AA45CF60069D40B /* SAInfoViewController.m */; };
+		5A58F5421AA45CF60069D40B /* SAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F53F1AA45CF60069D40B /* SAMainViewController.m */; };
 		5A5C27751A5BD4E700EFAA46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27771A5BD4E700EFAA46 /* InfoPlist.strings */; };
 		5A5C277E1A5BD7A300EFAA46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27801A5BD7A300EFAA46 /* InfoPlist.strings */; };
 		5A5C27831A5BD80600EFAA46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27851A5BD80600EFAA46 /* Localizable.strings */; };
 		5AA08AB61A5BCCE000A9DBB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AA08AB81A5BCCE000A9DBB1 /* Localizable.strings */; };
-		5AAE63F51AA15CAA00AB99E6 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAE63F21AA15CAA00AB99E6 /* libMobClickLibrary.a */; };
 		5AAE63F71AA15E6300AB99E6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAE63F61AA15E6300AB99E6 /* libz.dylib */; };
 		5AB140B01A59258C0027C784 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB140AE1A59258C0027C784 /* MainInterface.storyboard */; };
 		5AC5CBBA1A298086001DD8CC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC5CBB91A298086001DD8CC /* MessageUI.framework */; };
-		5AC5CBBD1A2982CD001DD8CC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5CBBC1A2982CD001DD8CC /* AboutViewController.m */; };
-		5AC874A919EFCF5200CFBD24 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC874A819EFCF5200CFBD24 /* InfoViewController.m */; };
 		5AED302719CD47F70098DC57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302619CD47F70098DC57 /* main.m */; };
 		5AED302A19CD47F70098DC57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302919CD47F70098DC57 /* AppDelegate.m */; };
-		5AED302D19CD47F70098DC57 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED302C19CD47F70098DC57 /* MainViewController.m */; };
 		5AED303019CD47F70098DC57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AED302E19CD47F70098DC57 /* Main.storyboard */; };
 		5AED303219CD47F70098DC57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AED303119CD47F70098DC57 /* Images.xcassets */; };
 		5AED304119CD47F70098DC57 /* NetAsistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED304019CD47F70098DC57 /* NetAsistantTests.m */; };
-		5AED304E19CD49950098DC57 /* GlobalHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED304D19CD49950098DC57 /* GlobalHolder.m */; };
-		5AED305119CD49F10098DC57 /* NetworkFlowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED305019CD49F10098DC57 /* NetworkFlowService.m */; };
-		5AED305519CD4A4E0098DC57 /* NetworkFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AED305419CD4A4E0098DC57 /* NetworkFlow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +77,20 @@
 		5A451CED19CD6DE100F21478 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		5A451CEE19CD6DE100F21478 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		5A4F03BA1A70CA0D0050BD32 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		5A58F52B1AA45C440069D40B /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		5A58F52C1AA45C440069D40B /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		5A58F52F1AA45C5F0069D40B /* SANetworkFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANetworkFlow.h; sourceTree = "<group>"; };
+		5A58F5301AA45C5F0069D40B /* SANetworkFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANetworkFlow.m; sourceTree = "<group>"; };
+		5A58F5331AA45C940069D40B /* SAGlobalHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAGlobalHolder.h; sourceTree = "<group>"; };
+		5A58F5341AA45C940069D40B /* SAGlobalHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAGlobalHolder.m; sourceTree = "<group>"; };
+		5A58F5351AA45C940069D40B /* SANetworkFlowService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANetworkFlowService.h; sourceTree = "<group>"; };
+		5A58F5361AA45C940069D40B /* SANetworkFlowService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANetworkFlowService.m; sourceTree = "<group>"; };
+		5A58F53A1AA45CF60069D40B /* SAAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAboutViewController.h; sourceTree = "<group>"; };
+		5A58F53B1AA45CF60069D40B /* SAAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAboutViewController.m; sourceTree = "<group>"; };
+		5A58F53C1AA45CF60069D40B /* SAInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAInfoViewController.h; sourceTree = "<group>"; };
+		5A58F53D1AA45CF60069D40B /* SAInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAInfoViewController.m; sourceTree = "<group>"; };
+		5A58F53E1AA45CF60069D40B /* SAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMainViewController.h; sourceTree = "<group>"; };
+		5A58F53F1AA45CF60069D40B /* SAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMainViewController.m; sourceTree = "<group>"; };
 		5A5C276F1A5BD44700EFAA46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		5A5C27761A5BD4E700EFAA46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5A5C27781A5BD4E800EFAA46 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -93,35 +107,21 @@
 		5AA08AB71A5BCCE000A9DBB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AA08AB91A5BCCE300A9DBB1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5AA08ABA1A5BCCE300A9DBB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5AAE63F21AA15CAA00AB99E6 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		5AAE63F31AA15CAA00AB99E6 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		5AAE63F61AA15E6300AB99E6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5AB140B21A5925ED0027C784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5AB140B31A5926080027C784 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		5AC5CBB91A298086001DD8CC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		5AC5CBBB1A2982CD001DD8CC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		5AC5CBBC1A2982CD001DD8CC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		5AC874A719EFCF5200CFBD24 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		5AC874A819EFCF5200CFBD24 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		5AE39F2119D0134000AEC2F0 /* NetAsistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NetAsistant.entitlements; sourceTree = "<group>"; };
 		5AE39F2219D0139900AEC2F0 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Extension.entitlements; sourceTree = "<group>"; };
 		5AED302119CD47F70098DC57 /* NetAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AED302619CD47F70098DC57 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AED302819CD47F70098DC57 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5AED302919CD47F70098DC57 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5AED302B19CD47F70098DC57 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		5AED302C19CD47F70098DC57 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		5AED302F19CD47F70098DC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AED303119CD47F70098DC57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5AED303A19CD47F70098DC57 /* NetAsistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetAsistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AED303F19CD47F70098DC57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AED304019CD47F70098DC57 /* NetAsistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetAsistantTests.m; sourceTree = "<group>"; };
-		5AED304C19CD49950098DC57 /* GlobalHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalHolder.h; sourceTree = "<group>"; };
-		5AED304D19CD49950098DC57 /* GlobalHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalHolder.m; sourceTree = "<group>"; };
-		5AED304F19CD49F10098DC57 /* NetworkFlowService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFlowService.h; sourceTree = "<group>"; };
-		5AED305019CD49F10098DC57 /* NetworkFlowService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFlowService.m; sourceTree = "<group>"; };
-		5AED305319CD4A4E0098DC57 /* NetworkFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFlow.h; sourceTree = "<group>"; };
-		5AED305419CD4A4E0098DC57 /* NetworkFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFlow.m; sourceTree = "<group>"; };
 		5AED305619CD4B6D0098DC57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AED308C19CD4CF80098DC57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -139,9 +139,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A58F52D1AA45C440069D40B /* libMobClickLibrary.a in Frameworks */,
 				5AAE63F71AA15E6300AB99E6 /* libz.dylib in Frameworks */,
 				5AC5CBBA1A298086001DD8CC /* MessageUI.framework in Frameworks */,
-				5AAE63F51AA15CAA00AB99E6 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,21 +177,54 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5AAE63F01AA15CA100AB99E6 /* Libs */ = {
+		5A58F5291AA45C440069D40B /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				5AAE63F11AA15CAA00AB99E6 /* Umeng */,
+				5A58F52A1AA45C440069D40B /* Umeng */,
 			);
-			name = Libs;
+			path = Libs;
 			sourceTree = "<group>";
 		};
-		5AAE63F11AA15CAA00AB99E6 /* Umeng */ = {
+		5A58F52A1AA45C440069D40B /* Umeng */ = {
 			isa = PBXGroup;
 			children = (
-				5AAE63F21AA15CAA00AB99E6 /* libMobClickLibrary.a */,
-				5AAE63F31AA15CAA00AB99E6 /* MobClick.h */,
+				5A58F52B1AA45C440069D40B /* libMobClickLibrary.a */,
+				5A58F52C1AA45C440069D40B /* MobClick.h */,
 			);
 			path = Umeng;
+			sourceTree = "<group>";
+		};
+		5A58F52E1AA45C5F0069D40B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A58F52F1AA45C5F0069D40B /* SANetworkFlow.h */,
+				5A58F5301AA45C5F0069D40B /* SANetworkFlow.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A58F5321AA45C940069D40B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5A58F5331AA45C940069D40B /* SAGlobalHolder.h */,
+				5A58F5341AA45C940069D40B /* SAGlobalHolder.m */,
+				5A58F5351AA45C940069D40B /* SANetworkFlowService.h */,
+				5A58F5361AA45C940069D40B /* SANetworkFlowService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5A58F5391AA45CF60069D40B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A58F53A1AA45CF60069D40B /* SAAboutViewController.h */,
+				5A58F53B1AA45CF60069D40B /* SAAboutViewController.m */,
+				5A58F53C1AA45CF60069D40B /* SAInfoViewController.h */,
+				5A58F53D1AA45CF60069D40B /* SAInfoViewController.m */,
+				5A58F53E1AA45CF60069D40B /* SAMainViewController.h */,
+				5A58F53F1AA45CF60069D40B /* SAMainViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		5AED301819CD47F70098DC57 = {
@@ -218,11 +251,11 @@
 		5AED302319CD47F70098DC57 /* NetAsistant */ = {
 			isa = PBXGroup;
 			children = (
-				5AAE63F01AA15CA100AB99E6 /* Libs */,
 				5AE39F2119D0134000AEC2F0 /* NetAsistant.entitlements */,
-				5AED305219CD4A3E0098DC57 /* Model */,
-				5AED304B19CD497D0098DC57 /* Service */,
-				5AED304A19CD49750098DC57 /* Controller */,
+				5A58F5391AA45CF60069D40B /* Controllers */,
+				5A58F5321AA45C940069D40B /* Services */,
+				5A58F52E1AA45C5F0069D40B /* Models */,
+				5A58F5291AA45C440069D40B /* Libs */,
 				5AED302819CD47F70098DC57 /* AppDelegate.h */,
 				5AED302919CD47F70098DC57 /* AppDelegate.m */,
 				5AED302E19CD47F70098DC57 /* Main.storyboard */,
@@ -259,39 +292,6 @@
 				5AED303F19CD47F70098DC57 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5AED304A19CD49750098DC57 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5AED302B19CD47F70098DC57 /* MainViewController.h */,
-				5AED302C19CD47F70098DC57 /* MainViewController.m */,
-				5AC874A719EFCF5200CFBD24 /* InfoViewController.h */,
-				5AC874A819EFCF5200CFBD24 /* InfoViewController.m */,
-				5AC5CBBB1A2982CD001DD8CC /* AboutViewController.h */,
-				5AC5CBBC1A2982CD001DD8CC /* AboutViewController.m */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		5AED304B19CD497D0098DC57 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				5AED304C19CD49950098DC57 /* GlobalHolder.h */,
-				5AED304D19CD49950098DC57 /* GlobalHolder.m */,
-				5AED304F19CD49F10098DC57 /* NetworkFlowService.h */,
-				5AED305019CD49F10098DC57 /* NetworkFlowService.m */,
-			);
-			name = Service;
-			sourceTree = "<group>";
-		};
-		5AED305219CD4A3E0098DC57 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5AED305319CD4A4E0098DC57 /* NetworkFlow.h */,
-				5AED305419CD4A4E0098DC57 /* NetworkFlow.m */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		5AED308B19CD4BC40098DC57 /* Frameworks */ = {
@@ -466,13 +466,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AED305119CD49F10098DC57 /* NetworkFlowService.m in Sources */,
-				5AED304E19CD49950098DC57 /* GlobalHolder.m in Sources */,
-				5AC5CBBD1A2982CD001DD8CC /* AboutViewController.m in Sources */,
-				5AED305519CD4A4E0098DC57 /* NetworkFlow.m in Sources */,
-				5AED302D19CD47F70098DC57 /* MainViewController.m in Sources */,
+				5A58F5401AA45CF60069D40B /* SAAboutViewController.m in Sources */,
+				5A58F5311AA45C5F0069D40B /* SANetworkFlow.m in Sources */,
+				5A58F5381AA45C940069D40B /* SANetworkFlowService.m in Sources */,
+				5A58F5421AA45CF60069D40B /* SAMainViewController.m in Sources */,
 				5AED302A19CD47F70098DC57 /* AppDelegate.m in Sources */,
-				5AC874A919EFCF5200CFBD24 /* InfoViewController.m in Sources */,
+				5A58F5371AA45C940069D40B /* SAGlobalHolder.m in Sources */,
+				5A58F5411AA45CF60069D40B /* SAInfoViewController.m in Sources */,
 				5AED302719CD47F70098DC57 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,6 +704,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetAsistant/GoogleMobileAdsSdkiOS",
 					"$(PROJECT_DIR)/NetAsistant/Umeng",
+					"$(PROJECT_DIR)/NetAsistant/Libs/Umeng",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -724,6 +725,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetAsistant/GoogleMobileAdsSdkiOS",
 					"$(PROJECT_DIR)/NetAsistant/Umeng",
+					"$(PROJECT_DIR)/NetAsistant/Libs/Umeng",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

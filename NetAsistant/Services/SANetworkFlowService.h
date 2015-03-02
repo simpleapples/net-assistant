@@ -1,5 +1,5 @@
 //
-//  SystemService.h
+//  SANetworkFlowService.h
 //  NetAsistant
 //
 //  Created by Zzy on 9/20/14.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class NetworkFlow;
-@interface NetworkFlowService : NSObject
+@class SANetworkFlow;
+@interface SANetworkFlowService : NSObject
 
-+ (NetworkFlow *)networkFlow;
++ (SANetworkFlow *)networkFlow;
 
 @end

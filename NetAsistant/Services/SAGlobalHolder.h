@@ -16,14 +16,14 @@ typedef NS_OPTIONS(NSInteger, COLOR_TYPE)
     COLOR_TYPE_ERROR,
 };
 
-@interface GlobalHolder : NSObject
+@interface SAGlobalHolder : NSObject
 
 @property (nonatomic) int64_t limitFlow;
 @property (nonatomic) int64_t lastFlow;
 @property (nonatomic) int64_t offsetFlow;
 @property (strong, nonatomic) NSDate *lastDate;
 
-+ (GlobalHolder *)sharedSingleton;
++ (SAGlobalHolder *)sharedSingleton;
 
 - (UIColor *)colorWithType:(COLOR_TYPE)type;
 - (void)backupToFile;

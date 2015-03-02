@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Zzy. All rights reserved.
 //
 
-#import "AboutViewController.h"
+#import "SAAboutViewController.h"
 #import <MessageUI/MessageUI.h>
 
-@interface AboutViewController () <MFMailComposeViewControllerDelegate>
+@interface SAAboutViewController () <MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
 
-@implementation AboutViewController
+@implementation SAAboutViewController
 
 - (void)viewDidLoad
 {

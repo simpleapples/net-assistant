@@ -1,5 +1,5 @@
 //
-//  NetworkFlow.h
+//  SANetworkFlow.h
 //  NetAsistant
 //
 //  Created by Zzy on 9/20/14.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface NetworkFlow : NSObject
+@interface SANetworkFlow : NSObject
 
 @property (nonatomic, readonly) int64_t allFlow;
 @property (nonatomic, readonly) int64_t allInFlow;

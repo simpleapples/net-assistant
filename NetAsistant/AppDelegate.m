@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "GlobalHolder.h"
-#import "NetworkFlowService.h"
-#import "NetworkFlow.h"
+#import "SAGlobalHolder.h"
+#import "SANetworkFlowService.h"
+#import "SANetworkFlow.h"
 #import "MobClick.h"
 
 @interface AppDelegate ()
@@ -32,17 +32,17 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    NetworkFlow *networkFlow = [NetworkFlowService networkFlow];
+    SANetworkFlow *networkFlow = [SANetworkFlowService networkFlow];
     int64_t usedFlow = 0;
-    if (networkFlow.wwanFlow >= [GlobalHolder sharedSingleton].lastFlow) {
-        usedFlow = networkFlow.wwanFlow - [GlobalHolder sharedSingleton].lastFlow + [GlobalHolder sharedSingleton].offsetFlow;
+    if (networkFlow.wwanFlow >= [SAGlobalHolder sharedSingleton].lastFlow) {
+        usedFlow = networkFlow.wwanFlow - [SAGlobalHolder sharedSingleton].lastFlow + [SAGlobalHolder sharedSingleton].offsetFlow;
     } else {
-        usedFlow = [GlobalHolder sharedSingleton].offsetFlow;
+        usedFlow = [SAGlobalHolder sharedSingleton].offsetFlow;
     }
-    [GlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
-    [GlobalHolder sharedSingleton].offsetFlow = usedFlow;
-    [GlobalHolder sharedSingleton].lastDate = [NSDate date];
-    [[GlobalHolder sharedSingleton] backupToFile];
+    [SAGlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
+    [SAGlobalHolder sharedSingleton].offsetFlow = usedFlow;
+    [SAGlobalHolder sharedSingleton].lastDate = [NSDate date];
+    [[SAGlobalHolder sharedSingleton] backupToFile];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 

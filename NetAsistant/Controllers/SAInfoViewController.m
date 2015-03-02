@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Zzy. All rights reserved.
 //
 
-#import "InfoViewController.h"
+#import "SAInfoViewController.h"
 
-@implementation InfoViewController
+@implementation SAInfoViewController
 
 - (void)viewDidLoad
 {

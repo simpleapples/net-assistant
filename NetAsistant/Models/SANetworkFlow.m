@@ -1,14 +1,14 @@
 //
-//  NetworkFlow.m
+//  SANetworkFlow.m
 //  NetAsistant
 //
 //  Created by Zzy on 9/20/14.
 //  Copyright (c) 2014 Zzy. All rights reserved.
 //
 
-#import "NetworkFlow.h"
+#import "SANetworkFlow.h"
 
-@interface NetworkFlow ()
+@interface SANetworkFlow ()
 
 @property (nonatomic) int64_t allFlow;
 @property (nonatomic) int64_t allInFlow;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation NetworkFlow
+@implementation SANetworkFlow
 
 - (instancetype)init
 {

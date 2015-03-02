@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vdS-2L-cKu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vdS-2L-cKu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--MainViewController-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" title="MainViewController" id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" title="MainViewController" id="vXZ-lx-hvc" customClass="SAMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -202,7 +202,7 @@
         <!--AboutViewController-->
         <scene sceneID="vSr-JS-11h">
             <objects>
-                <tableViewController storyboardIdentifier="AboutViewController" title="AboutViewController" id="zhd-fp-Gh5" customClass="AboutViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AboutViewController" title="AboutViewController" id="zhd-fp-Gh5" customClass="SAAboutViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DZk-iY-d7E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +284,7 @@
         <!--InfoViewController-->
         <scene sceneID="WhH-1y-Qif">
             <objects>
-                <viewController storyboardIdentifier="InfoViewController" title="InfoViewController" id="Ev1-gI-f1H" customClass="InfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoViewController" title="InfoViewController" id="Ev1-gI-f1H" customClass="SAInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="okB-AF-v9H"/>
                         <viewControllerLayoutGuide type="bottom" id="lf8-NA-T6E"/>
