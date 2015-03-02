@@ -18,6 +18,10 @@
 		5A58F5401AA45CF60069D40B /* SAAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F53B1AA45CF60069D40B /* SAAboutViewController.m */; };
 		5A58F5411AA45CF60069D40B /* SAInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F53D1AA45CF60069D40B /* SAInfoViewController.m */; };
 		5A58F5421AA45CF60069D40B /* SAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F53F1AA45CF60069D40B /* SAMainViewController.m */; };
+		5A58F54C1AA4628B0069D40B /* VVBlurPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5451AA4628B0069D40B /* VVBlurPresentationController.m */; };
+		5A58F54D1AA4628B0069D40B /* VVBlurPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5471AA4628B0069D40B /* VVBlurPresenter.m */; };
+		5A58F54E1AA4628B0069D40B /* VVBlurTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5491AA4628B0069D40B /* VVBlurTransitioning.m */; };
+		5A58F54F1AA4628B0069D40B /* VVBlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F54B1AA4628B0069D40B /* VVBlurViewController.m */; };
 		5A5C27751A5BD4E700EFAA46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27771A5BD4E700EFAA46 /* InfoPlist.strings */; };
 		5A5C277E1A5BD7A300EFAA46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27801A5BD7A300EFAA46 /* InfoPlist.strings */; };
 		5A5C27831A5BD80600EFAA46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C27851A5BD80600EFAA46 /* Localizable.strings */; };
@@ -91,6 +95,14 @@
 		5A58F53D1AA45CF60069D40B /* SAInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAInfoViewController.m; sourceTree = "<group>"; };
 		5A58F53E1AA45CF60069D40B /* SAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMainViewController.h; sourceTree = "<group>"; };
 		5A58F53F1AA45CF60069D40B /* SAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMainViewController.m; sourceTree = "<group>"; };
+		5A58F5441AA4628B0069D40B /* VVBlurPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBlurPresentationController.h; sourceTree = "<group>"; };
+		5A58F5451AA4628B0069D40B /* VVBlurPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVBlurPresentationController.m; sourceTree = "<group>"; };
+		5A58F5461AA4628B0069D40B /* VVBlurPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBlurPresenter.h; sourceTree = "<group>"; };
+		5A58F5471AA4628B0069D40B /* VVBlurPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVBlurPresenter.m; sourceTree = "<group>"; };
+		5A58F5481AA4628B0069D40B /* VVBlurTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBlurTransitioning.h; sourceTree = "<group>"; };
+		5A58F5491AA4628B0069D40B /* VVBlurTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVBlurTransitioning.m; sourceTree = "<group>"; };
+		5A58F54A1AA4628B0069D40B /* VVBlurViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBlurViewController.h; sourceTree = "<group>"; };
+		5A58F54B1AA4628B0069D40B /* VVBlurViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVBlurViewController.m; sourceTree = "<group>"; };
 		5A5C276F1A5BD44700EFAA46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		5A5C27761A5BD4E700EFAA46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5A5C27781A5BD4E800EFAA46 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -180,6 +192,7 @@
 		5A58F5291AA45C440069D40B /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				5A58F5431AA4628B0069D40B /* VVBlurPresentation */,
 				5A58F52A1AA45C440069D40B /* Umeng */,
 			);
 			path = Libs;
@@ -225,6 +238,21 @@
 				5A58F53F1AA45CF60069D40B /* SAMainViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5A58F5431AA4628B0069D40B /* VVBlurPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				5A58F5441AA4628B0069D40B /* VVBlurPresentationController.h */,
+				5A58F5451AA4628B0069D40B /* VVBlurPresentationController.m */,
+				5A58F5461AA4628B0069D40B /* VVBlurPresenter.h */,
+				5A58F5471AA4628B0069D40B /* VVBlurPresenter.m */,
+				5A58F5481AA4628B0069D40B /* VVBlurTransitioning.h */,
+				5A58F5491AA4628B0069D40B /* VVBlurTransitioning.m */,
+				5A58F54A1AA4628B0069D40B /* VVBlurViewController.h */,
+				5A58F54B1AA4628B0069D40B /* VVBlurViewController.m */,
+			);
+			path = VVBlurPresentation;
 			sourceTree = "<group>";
 		};
 		5AED301819CD47F70098DC57 = {
@@ -471,8 +499,12 @@
 				5A58F5381AA45C940069D40B /* SANetworkFlowService.m in Sources */,
 				5A58F5421AA45CF60069D40B /* SAMainViewController.m in Sources */,
 				5AED302A19CD47F70098DC57 /* AppDelegate.m in Sources */,
+				5A58F54D1AA4628B0069D40B /* VVBlurPresenter.m in Sources */,
 				5A58F5371AA45C940069D40B /* SAGlobalHolder.m in Sources */,
+				5A58F54E1AA4628B0069D40B /* VVBlurTransitioning.m in Sources */,
 				5A58F5411AA45CF60069D40B /* SAInfoViewController.m in Sources */,
+				5A58F54F1AA4628B0069D40B /* VVBlurViewController.m in Sources */,
+				5A58F54C1AA4628B0069D40B /* VVBlurPresentationController.m in Sources */,
 				5AED302719CD47F70098DC57 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

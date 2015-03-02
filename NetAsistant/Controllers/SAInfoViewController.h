@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VVBlurViewController.h"
 
-@interface SAInfoViewController : UIViewController
+@interface SAInfoViewController : VVBlurViewController
 
 @end
