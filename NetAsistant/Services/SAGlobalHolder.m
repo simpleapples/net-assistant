@@ -7,6 +7,8 @@
 //
 
 #import "SAGlobalHolder.h"
+#import "SANetworkFlow.h"
+#import "SACoreDataManager.h"
 
 @interface SAGlobalHolder ()
 
@@ -40,6 +42,21 @@
     return self;
 }
 
+- (void)updateDataWithNetworkFlow:(SANetworkFlow *)networkFlow
+{
+    if (networkFlow.wwanFlow >= self.lastUsedFlow) {
+        self.usedFlow = networkFlow.wwanFlow - self.lastUsedFlow + self.usedFlow;
+    }
+    self.lastUsedFlow = networkFlow.wwanFlow;
+    self.remainedFlow = self.packageFlow - self.usedFlow;
+    self.lastRecordDate = [NSDate date];
+    [[SACoreDataManager manager] insertOrUpdateDetailWithFlowValue:self.usedFlow date:self.lastRecordDate];
+}
+
+- (void)storeFlowValueWithDate:(NSDate *)date
+{
+}
+
 - (UIColor *)colorWithType:(COLOR_TYPE)type
 {
     switch (type) {
@@ -52,24 +69,35 @@
     }
 }
 
+- (UIColor *)colorWithPercent:(NSInteger)percent
+{
+    if (percent < 10) {
+        return [self colorWithType:COLOR_TYPE_ERROR];
+    } else if (percent < 20) {
+        return [self colorWithType:COLOR_TYPE_WARNNING];
+    }
+    return [self colorWithType:COLOR_TYPE_NORMAL];
+}
+
 - (void)backupToFile
 {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
-    [userDefaults setObject:[NSNumber numberWithLongLong:self.limitFlow] forKey:@"limitFlow"];
-    [userDefaults setObject:[NSNumber numberWithLongLong:self.lastFlow] forKey:@"lastFlow"];
-    [userDefaults setObject:[NSNumber numberWithLongLong:self.offsetFlow] forKey:@"offsetFlow"];
-    [userDefaults setObject:self.lastDate forKey:@"lastDate"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.packageFlow] forKey:@"limitFlow"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.lastUsedFlow] forKey:@"lastFlow"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.usedFlow] forKey:@"offsetFlow"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.remainedFlow] forKey:@"remainedFlow"];
+    [userDefaults setObject:self.lastRecordDate forKey:@"lastDate"];
     [userDefaults synchronize];
 }
 
 - (void)recoverFromFile
 {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
-    self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
-    self.limitFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
-    self.lastFlow = [[userDefaults objectForKey:@"lastFlow"] longLongValue];
-    self.offsetFlow = [[userDefaults objectForKey:@"offsetFlow"] longLongValue];
-    self.lastDate = [userDefaults objectForKey:@"lastDate"];
+    self.packageFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
+    self.lastUsedFlow = [[userDefaults objectForKey:@"lastFlow"] longLongValue];
+    self.usedFlow = [[userDefaults objectForKey:@"offsetFlow"] longLongValue];
+    self.remainedFlow = [[userDefaults objectForKey:@"remainedFlow"] longLongValue];
+    self.lastRecordDate = [userDefaults objectForKey:@"lastDate"];
 }
 
 @end

@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A40B1671AAAD57000121BF2 /* SADetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1661AAAD57000121BF2 /* SADetailCell.m */; };
+		5A40B16A1AAAD61F00121BF2 /* netasistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1681AAAD61F00121BF2 /* netasistant.xcdatamodeld */; };
+		5A40B16B1AAAD61F00121BF2 /* netasistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1681AAAD61F00121BF2 /* netasistant.xcdatamodeld */; };
+		5A40B16E1AAAD67900121BF2 /* SADetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B16D1AAAD67900121BF2 /* SADetail.m */; };
+		5A40B1721AAAD6C600121BF2 /* SACoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1711AAAD6C600121BF2 /* SACoreDataManager.m */; };
+		5A40B1771AAADC7300121BF2 /* SAConvertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1761AAADC7300121BF2 /* SAConvertUtils.m */; };
+		5A40B17B1AAADCD500121BF2 /* SADateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B17A1AAADCD500121BF2 /* SADateUtils.m */; };
+		5A40B17F1AAAE6B900121BF2 /* SADateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B17A1AAADCD500121BF2 /* SADateUtils.m */; };
+		5A40B1801AAAE6BC00121BF2 /* SAConvertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1761AAADC7300121BF2 /* SAConvertUtils.m */; };
+		5A40B1811AAAE6C300121BF2 /* SACoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1711AAAD6C600121BF2 /* SACoreDataManager.m */; };
+		5A40B1821AAAE6C500121BF2 /* SAGlobalHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5341AA45C940069D40B /* SAGlobalHolder.m */; };
+		5A40B1831AAAE6C800121BF2 /* SANetworkFlowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5361AA45C940069D40B /* SANetworkFlowService.m */; };
+		5A40B1841AAAE6CC00121BF2 /* SANetworkFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5301AA45C5F0069D40B /* SANetworkFlow.m */; };
+		5A40B1851AAAE6D100121BF2 /* SADetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B16D1AAAD67900121BF2 /* SADetail.m */; };
+		5A40B1881AAAE96600121BF2 /* SADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1871AAAE96600121BF2 /* SADetailViewController.m */; };
+		5A40B1891AAAE96600121BF2 /* SADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1871AAAE96600121BF2 /* SADetailViewController.m */; };
 		5A451CE919CD6DE100F21478 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A451CE819CD6DE100F21478 /* NotificationCenter.framework */; };
 		5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A451CEE19CD6DE100F21478 /* TodayViewController.m */; };
 		5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A451CE719CD6DE100F21478 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -75,6 +91,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A40B1651AAAD57000121BF2 /* SADetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SADetailCell.h; sourceTree = "<group>"; };
+		5A40B1661AAAD57000121BF2 /* SADetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SADetailCell.m; sourceTree = "<group>"; };
+		5A40B1691AAAD61F00121BF2 /* netasistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = netasistant.xcdatamodel; sourceTree = "<group>"; };
+		5A40B16C1AAAD67900121BF2 /* SADetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SADetail.h; sourceTree = "<group>"; };
+		5A40B16D1AAAD67900121BF2 /* SADetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SADetail.m; sourceTree = "<group>"; };
+		5A40B1701AAAD6C600121BF2 /* SACoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACoreDataManager.h; sourceTree = "<group>"; };
+		5A40B1711AAAD6C600121BF2 /* SACoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACoreDataManager.m; sourceTree = "<group>"; };
+		5A40B1751AAADC7300121BF2 /* SAConvertUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAConvertUtils.h; sourceTree = "<group>"; };
+		5A40B1761AAADC7300121BF2 /* SAConvertUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAConvertUtils.m; sourceTree = "<group>"; };
+		5A40B1791AAADCD500121BF2 /* SADateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SADateUtils.h; sourceTree = "<group>"; };
+		5A40B17A1AAADCD500121BF2 /* SADateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SADateUtils.m; sourceTree = "<group>"; };
+		5A40B1861AAAE96600121BF2 /* SADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SADetailViewController.h; sourceTree = "<group>"; };
+		5A40B1871AAAE96600121BF2 /* SADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SADetailViewController.m; sourceTree = "<group>"; };
+		5A40B18D1AAAEAB200121BF2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5A451CE719CD6DE100F21478 /* Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A451CE819CD6DE100F21478 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5A451CEC19CD6DE100F21478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,7 +145,6 @@
 		5A5C27871A5BD80700EFAA46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A7BCE9919E7C6A1005F01F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5AA08AB11A5BC5F500A9DBB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
-		5AA08AB21A5BC5F600A9DBB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5AA08AB71A5BCCE000A9DBB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AA08AB91A5BCCE300A9DBB1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5AA08ABA1A5BCCE300A9DBB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -167,6 +196,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A40B1641AAAD55800121BF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A40B1651AAAD57000121BF2 /* SADetailCell.h */,
+				5A40B1661AAAD57000121BF2 /* SADetailCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A40B1741AAADC6200121BF2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5A40B1751AAADC7300121BF2 /* SAConvertUtils.h */,
+				5A40B1761AAADC7300121BF2 /* SAConvertUtils.m */,
+				5A40B1791AAADCD500121BF2 /* SADateUtils.h */,
+				5A40B17A1AAADCD500121BF2 /* SADateUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		5A451CEA19CD6DE100F21478 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +261,8 @@
 			children = (
 				5A58F52F1AA45C5F0069D40B /* SANetworkFlow.h */,
 				5A58F5301AA45C5F0069D40B /* SANetworkFlow.m */,
+				5A40B16C1AAAD67900121BF2 /* SADetail.h */,
+				5A40B16D1AAAD67900121BF2 /* SADetail.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +270,8 @@
 		5A58F5321AA45C940069D40B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5A40B1701AAAD6C600121BF2 /* SACoreDataManager.h */,
+				5A40B1711AAAD6C600121BF2 /* SACoreDataManager.m */,
 				5A58F5331AA45C940069D40B /* SAGlobalHolder.h */,
 				5A58F5341AA45C940069D40B /* SAGlobalHolder.m */,
 				5A58F5351AA45C940069D40B /* SANetworkFlowService.h */,
@@ -236,6 +289,8 @@
 				5A58F53D1AA45CF60069D40B /* SAInfoViewController.m */,
 				5A58F53E1AA45CF60069D40B /* SAMainViewController.h */,
 				5A58F53F1AA45CF60069D40B /* SAMainViewController.m */,
+				5A40B1861AAAE96600121BF2 /* SADetailViewController.h */,
+				5A40B1871AAAE96600121BF2 /* SADetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				5AE39F2119D0134000AEC2F0 /* NetAsistant.entitlements */,
+				5A40B1741AAADC6200121BF2 /* Utils */,
+				5A40B1641AAAD55800121BF2 /* Views */,
 				5A58F5391AA45CF60069D40B /* Controllers */,
 				5A58F5321AA45C940069D40B /* Services */,
 				5A58F52E1AA45C5F0069D40B /* Models */,
@@ -290,6 +347,7 @@
 				5AED303119CD47F70098DC57 /* Images.xcassets */,
 				5AED302419CD47F70098DC57 /* Supporting Files */,
 				5A4F03BA1A70CA0D0050BD32 /* LaunchScreen.xib */,
+				5A40B1681AAAD61F00121BF2 /* netasistant.xcdatamodeld */,
 			);
 			path = NetAsistant;
 			sourceTree = "<group>";
@@ -486,7 +544,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A40B1811AAAE6C300121BF2 /* SACoreDataManager.m in Sources */,
+				5A40B1821AAAE6C500121BF2 /* SAGlobalHolder.m in Sources */,
 				5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */,
+				5A40B1841AAAE6CC00121BF2 /* SANetworkFlow.m in Sources */,
+				5A40B1851AAAE6D100121BF2 /* SADetail.m in Sources */,
+				5A40B17F1AAAE6B900121BF2 /* SADateUtils.m in Sources */,
+				5A40B1831AAAE6C800121BF2 /* SANetworkFlowService.m in Sources */,
+				5A40B1801AAAE6BC00121BF2 /* SAConvertUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,18 +559,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A40B1721AAAD6C600121BF2 /* SACoreDataManager.m in Sources */,
 				5A58F5401AA45CF60069D40B /* SAAboutViewController.m in Sources */,
+				5A40B1771AAADC7300121BF2 /* SAConvertUtils.m in Sources */,
 				5A58F5311AA45C5F0069D40B /* SANetworkFlow.m in Sources */,
+				5A40B16A1AAAD61F00121BF2 /* netasistant.xcdatamodeld in Sources */,
 				5A58F5381AA45C940069D40B /* SANetworkFlowService.m in Sources */,
 				5A58F5421AA45CF60069D40B /* SAMainViewController.m in Sources */,
 				5AED302A19CD47F70098DC57 /* AppDelegate.m in Sources */,
 				5A58F54D1AA4628B0069D40B /* VVBlurPresenter.m in Sources */,
 				5A58F5371AA45C940069D40B /* SAGlobalHolder.m in Sources */,
 				5A58F54E1AA4628B0069D40B /* VVBlurTransitioning.m in Sources */,
+				5A40B17B1AAADCD500121BF2 /* SADateUtils.m in Sources */,
+				5A40B16E1AAAD67900121BF2 /* SADetail.m in Sources */,
 				5A58F5411AA45CF60069D40B /* SAInfoViewController.m in Sources */,
 				5A58F54F1AA4628B0069D40B /* VVBlurViewController.m in Sources */,
+				5A40B1671AAAD57000121BF2 /* SADetailCell.m in Sources */,
 				5A58F54C1AA4628B0069D40B /* VVBlurPresentationController.m in Sources */,
 				5AED302719CD47F70098DC57 /* main.m in Sources */,
+				5A40B1881AAAE96600121BF2 /* SADetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +585,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A40B16B1AAAD61F00121BF2 /* netasistant.xcdatamodeld in Sources */,
 				5AED304119CD47F70098DC57 /* NetAsistantTests.m in Sources */,
+				5A40B1891AAAE96600121BF2 /* SADetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +675,7 @@
 			children = (
 				5AED302F19CD47F70098DC57 /* Base */,
 				5A7BCE9919E7C6A1005F01F7 /* zh-Hans */,
-				5AA08AB21A5BC5F600A9DBB1 /* en */,
+				5A40B18D1AAAEAB200121BF2 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -839,6 +913,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5A40B1681AAAD61F00121BF2 /* netasistant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5A40B1691AAAD61F00121BF2 /* netasistant.xcdatamodel */,
+			);
+			currentVersion = 5A40B1691AAAD61F00121BF2 /* netasistant.xcdatamodel */;
+			path = netasistant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5AED301919CD47F70098DC57 /* Project object */;
 }

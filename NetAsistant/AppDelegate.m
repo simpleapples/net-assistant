@@ -34,14 +34,14 @@
 {
     SANetworkFlow *networkFlow = [SANetworkFlowService networkFlow];
     int64_t usedFlow = 0;
-    if (networkFlow.wwanFlow >= [SAGlobalHolder sharedSingleton].lastFlow) {
-        usedFlow = networkFlow.wwanFlow - [SAGlobalHolder sharedSingleton].lastFlow + [SAGlobalHolder sharedSingleton].offsetFlow;
+    if (networkFlow.wwanFlow >= [SAGlobalHolder sharedSingleton].lastUsedFlow) {
+        usedFlow = networkFlow.wwanFlow - [SAGlobalHolder sharedSingleton].lastUsedFlow + [SAGlobalHolder sharedSingleton].usedFlow;
     } else {
-        usedFlow = [SAGlobalHolder sharedSingleton].offsetFlow;
+        usedFlow = [SAGlobalHolder sharedSingleton].usedFlow;
     }
-    [SAGlobalHolder sharedSingleton].lastFlow = networkFlow.wwanFlow;
-    [SAGlobalHolder sharedSingleton].offsetFlow = usedFlow;
-    [SAGlobalHolder sharedSingleton].lastDate = [NSDate date];
+    [SAGlobalHolder sharedSingleton].lastUsedFlow = networkFlow.wwanFlow;
+    [SAGlobalHolder sharedSingleton].usedFlow = usedFlow;
+    [SAGlobalHolder sharedSingleton].lastRecordDate = [NSDate date];
     [[SAGlobalHolder sharedSingleton] backupToFile];
     completionHandler(UIBackgroundFetchResultNewData);
 }
