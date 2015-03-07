@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5A40B1671AAAD57000121BF2 /* SADetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1661AAAD57000121BF2 /* SADetailCell.m */; };
 		5A40B16A1AAAD61F00121BF2 /* netasistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1681AAAD61F00121BF2 /* netasistant.xcdatamodeld */; };
-		5A40B16B1AAAD61F00121BF2 /* netasistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1681AAAD61F00121BF2 /* netasistant.xcdatamodeld */; };
 		5A40B16E1AAAD67900121BF2 /* SADetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B16D1AAAD67900121BF2 /* SADetail.m */; };
 		5A40B1721AAAD6C600121BF2 /* SACoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1711AAAD6C600121BF2 /* SACoreDataManager.m */; };
 		5A40B1771AAADC7300121BF2 /* SAConvertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1761AAADC7300121BF2 /* SAConvertUtils.m */; };
@@ -23,6 +22,7 @@
 		5A40B1851AAAE6D100121BF2 /* SADetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B16D1AAAD67900121BF2 /* SADetail.m */; };
 		5A40B1881AAAE96600121BF2 /* SADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1871AAAE96600121BF2 /* SADetailViewController.m */; };
 		5A40B1891AAAE96600121BF2 /* SADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1871AAAE96600121BF2 /* SADetailViewController.m */; };
+		5A40B18E1AAB028D00121BF2 /* netasistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1681AAAD61F00121BF2 /* netasistant.xcdatamodeld */; };
 		5A451CE919CD6DE100F21478 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A451CE819CD6DE100F21478 /* NotificationCenter.framework */; };
 		5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A451CEE19CD6DE100F21478 /* TodayViewController.m */; };
 		5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A451CE719CD6DE100F21478 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -545,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A40B1811AAAE6C300121BF2 /* SACoreDataManager.m in Sources */,
+				5A40B18E1AAB028D00121BF2 /* netasistant.xcdatamodeld in Sources */,
 				5A40B1821AAAE6C500121BF2 /* SAGlobalHolder.m in Sources */,
 				5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */,
 				5A40B1841AAAE6CC00121BF2 /* SANetworkFlow.m in Sources */,
@@ -585,7 +586,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A40B16B1AAAD61F00121BF2 /* netasistant.xcdatamodeld in Sources */,
 				5AED304119CD47F70098DC57 /* NetAsistantTests.m in Sources */,
 				5A40B1891AAAE96600121BF2 /* SADetailViewController.m in Sources */,
 			);

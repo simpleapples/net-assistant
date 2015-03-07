@@ -11,6 +11,7 @@
 #import "SANetworkFlowService.h"
 #import "SANetworkFlow.h"
 #import "MobClick.h"
+#import "SACoreDataManager.h"
 
 @interface AppDelegate ()
 
@@ -52,6 +53,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    [[SACoreDataManager manager] saveContext];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -64,6 +66,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [[SACoreDataManager manager] saveContext];
 }
 
 @end
