@@ -47,15 +47,15 @@
     if (networkFlow.wwanFlow >= self.lastUsedFlow) {
         self.usedFlow = networkFlow.wwanFlow - self.lastUsedFlow + self.usedFlow;
     }
+    int64_t increasedFlow = (self.usedFlow >= self.lastUsedFlow) ? (self.usedFlow - self.lastUsedFlow) : 0;
+    NSDate *nowDate = [NSDate date];
+    [[SACoreDataManager manager] insertOrUpdateDetailWithFlowValue:increasedFlow date:nowDate];
     self.lastUsedFlow = networkFlow.wwanFlow;
     self.remainedFlow = self.packageFlow - self.usedFlow;
-    self.lastRecordDate = [NSDate date];
-    [[SACoreDataManager manager] insertOrUpdateDetailWithFlowValue:self.usedFlow date:self.lastRecordDate];
+    self.lastRecordDate = nowDate;
 }
 
-- (void)storeFlowValueWithDate:(NSDate *)date
-{
-}
+#pragma mark - Color
 
 - (UIColor *)colorWithType:(COLOR_TYPE)type
 {
@@ -78,6 +78,8 @@
     }
     return [self colorWithType:COLOR_TYPE_NORMAL];
 }
+
+#pragma mark - UserDefaults
 
 - (void)backupToFile
 {

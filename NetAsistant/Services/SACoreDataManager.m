@@ -41,18 +41,15 @@
     NSInteger day = [SADateUtils dayWithDate:date];
     NSDate *dayDate = [SADateUtils dayDateWithStirng:[NSString stringWithFormat:@"%ld-%ld-%ld 00:00:00", (long)year, (long)month, (long)day]];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
-    NSArray *sortArray = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"SADetail"];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"date = %@", dayDate];
-    fetchRequest.sortDescriptors = sortArray;
     fetchRequest.fetchLimit = 1;
     
     NSError *error;
     NSArray *fetchResult = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     if (!error && fetchResult && fetchResult.count) {
         SADetail *existDetail = [fetchResult firstObject];
-        existDetail.flowValue = @(flowValue);
+        existDetail.flowValue = @(existDetail.flowValue.longLongValue + flowValue);
     } else {
         SADetail *detail = [NSEntityDescription insertNewObjectForEntityForName:@"SADetail" inManagedObjectContext:self.managedObjectContext];
         detail.flowValue = @(flowValue);
@@ -63,7 +60,14 @@
 - (void)detailsOfThisMonth:(void(^)(NSArray *details))completionBlock
 {
     NSParameterAssert(completionBlock);
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+    NSArray *sortArray = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"SADetail"];
+    fetchRequest.fetchLimit = 365;
+    fetchRequest.sortDescriptors = sortArray;
+    
     NSAsynchronousFetchRequest *asyncFetchRequest = [[NSAsynchronousFetchRequest alloc] initWithFetchRequest:fetchRequest completionBlock:^(NSAsynchronousFetchResult *result) {
         if (result && result.finalResult && result.finalResult.count) {
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -72,7 +72,7 @@
                 self.usedFlowLabel.text = [SAConvertUtils bytesToString:holder.usedFlow];
                 self.limitFlowLabel.text = [NSString stringWithFormat:NSLocalizedString(@"套餐总量: %@", nil), [SAConvertUtils bytesToString:holder.packageFlow]];
                 self.unusedFlowLabel.text = [SAConvertUtils bytesToString:holder.remainedFlow];
-                CGFloat progressWidth = (CGFloat)holder.remainedFlow / (CGFloat)holder.packageFlow * self.progressView.frame.size.width;
+                CGFloat progressWidth = (CGFloat)holder.usedFlow / (CGFloat)holder.packageFlow * self.progressView.frame.size.width;
                 if (progressWidth > self.progressView.frame.size.width) {
                     progressWidth = self.progressView.frame.size.width;
                 }
