@@ -31,8 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[SAGlobalHolder sharedSingleton] recoverFromFile];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,12 +49,13 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDate *nowDate = [NSDate date];
         SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
+        [holder recoverFromFile];
         if (holder.lastRecordDate && [SADateUtils monthWithDate:nowDate] != [SADateUtils monthWithDate:holder.lastRecordDate]
             && [nowDate timeIntervalSince1970] > [holder.lastRecordDate timeIntervalSince1970]) {
             [holder cleanFlowOfLastMonth];
-            [holder backupToFile];
         }
         [self updateNetworkFlow];
+        [holder backupToFile];
     });
 }
 
@@ -64,7 +63,6 @@
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
-        [holder recoverFromFile];
         SANetworkFlow *networkFlow = [SANetworkFlowService networkFlow];
         if (networkFlow) {
             [holder updateDataWithNetworkFlow:networkFlow];
@@ -81,7 +79,6 @@
                 self.progressHoverView.backgroundColor = [holder colorWithPercent:percent];
                 [self.view layoutIfNeeded];
             });
-            [holder backupToFile];
         }
     });
 }

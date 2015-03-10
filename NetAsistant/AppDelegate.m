@@ -28,6 +28,7 @@
     NSString *version = [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleShortVersionString"];
     [MobClick setAppVersion:version];
     [MobClick setEncryptEnabled:YES];
+    [[SAGlobalHolder sharedSingleton] recoverFromFile];
     return YES;
 }
 
@@ -38,8 +39,8 @@
     SANetworkFlow *networkFlow = [SANetworkFlowService networkFlow];
     if (networkFlow) {
         [holder updateDataWithNetworkFlow:networkFlow];
+        [holder backupToFile];
     }
-    [holder backupToFile];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
@@ -59,7 +60,6 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    [[SAGlobalHolder sharedSingleton] recoverFromFile];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
