@@ -33,22 +33,19 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+    SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
+    [holder recoverFromFile];
     SANetworkFlow *networkFlow = [SANetworkFlowService networkFlow];
-    int64_t usedFlow = 0;
-    if (networkFlow.wwanFlow >= [SAGlobalHolder sharedSingleton].lastUsedFlow) {
-        usedFlow = networkFlow.wwanFlow - [SAGlobalHolder sharedSingleton].lastUsedFlow + [SAGlobalHolder sharedSingleton].usedFlow;
-    } else {
-        usedFlow = [SAGlobalHolder sharedSingleton].usedFlow;
+    if (networkFlow) {
+        [holder updateDataWithNetworkFlow:networkFlow];
     }
-    [SAGlobalHolder sharedSingleton].lastUsedFlow = networkFlow.wwanFlow;
-    [SAGlobalHolder sharedSingleton].usedFlow = usedFlow;
-    [SAGlobalHolder sharedSingleton].lastRecordDate = [NSDate date];
-    [[SAGlobalHolder sharedSingleton] backupToFile];
+    [holder backupToFile];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
+    [[SAGlobalHolder sharedSingleton] backupToFile];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -62,6 +59,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [[SAGlobalHolder sharedSingleton] recoverFromFile];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

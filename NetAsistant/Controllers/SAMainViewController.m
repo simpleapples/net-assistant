@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *limitFlowLabel;
 @property (weak, nonatomic) IBOutlet UIButton *calibrateButton;
 @property (weak, nonatomic) IBOutlet UIButton *modifyButton;
-@property (strong, nonatomic) NSTimer *refreshTimer;
 
 @end
 
@@ -39,28 +38,17 @@
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[SAGlobalHolder sharedSingleton] recoverFromFile];
+        SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
         NSDate *nowDate = [NSDate date];
-        NSDate *lastDate = [SAGlobalHolder sharedSingleton].lastRecordDate;
-        if ([SAGlobalHolder sharedSingleton].packageFlow <= 0) {
+        NSDate *lastDate = holder.lastRecordDate;
+        if (holder.packageFlow <= 0) {
             [self alertModifyView];
         } else if ([SADateUtils monthWithDate:nowDate] != [SADateUtils monthWithDate:lastDate]
                    && [nowDate timeIntervalSince1970] > [lastDate timeIntervalSince1970]) {
-            [SAGlobalHolder sharedSingleton].usedFlow = 0;
-            [SAGlobalHolder sharedSingleton].lastRecordDate = [NSDate date];
-            [[SAGlobalHolder sharedSingleton] backupToFile];
+            [holder cleanFlowOfLastMonth];
         }
-        self.refreshTimer = nil;
-        self.refreshTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(onRefreshTimer) userInfo:nil repeats:YES];
-        [[NSRunLoop mainRunLoop] addTimer:self.refreshTimer forMode:NSDefaultRunLoopMode];
         [self updateFlowData];
     });
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    [self.refreshTimer invalidate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,26 +59,31 @@
 - (void)updateFlowData
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
         SANetworkFlow *networkFlow = [SANetworkFlowService networkFlow];
         if (networkFlow) {
-            [holder updateDataWithNetworkFlow:networkFlow];
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (holder.remainedFlow > 0) {
-                    NSInteger percent = holder.remainedFlow * 100.0f / holder.packageFlow;
-                    self.flowPercentLabel.text = [NSString stringWithFormat:@"%ld", (long)percent];
-                    self.view.backgroundColor = [holder colorWithPercent:percent];
-                } else {
-                    self.flowPercentLabel.text = @"0";
-                    self.view.backgroundColor = [holder colorWithType:COLOR_TYPE_ERROR];
-                }
-                if (holder.packageFlow > 0) {
-                    self.limitFlowLabel.text = [SAConvertUtils bytesToString:holder.packageFlow];
-                }
-                self.wwanFlowLabel.text = [SAConvertUtils bytesToString:holder.usedFlow];
+                [[SAGlobalHolder sharedSingleton] updateDataWithNetworkFlow:networkFlow];
+                [self updateInterface];
             });
         }
     });
+}
+
+- (void)updateInterface
+{
+    SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
+    if (holder.remainedFlow > 0) {
+        NSInteger percent = holder.remainedFlow * 100.0f / holder.packageFlow;
+        self.flowPercentLabel.text = [NSString stringWithFormat:@"%ld", (long)percent];
+        self.view.backgroundColor = [holder colorWithPercent:percent];
+    } else {
+        self.flowPercentLabel.text = @"0";
+        self.view.backgroundColor = [holder colorWithType:COLOR_TYPE_ERROR];
+    }
+    if (holder.packageFlow > 0) {
+        self.limitFlowLabel.text = [SAConvertUtils bytesToString:holder.packageFlow];
+    }
+    self.wwanFlowLabel.text = [SAConvertUtils bytesToString:holder.usedFlow];
 }
 
 #pragma mark - UIAlertView
@@ -130,14 +123,14 @@
     if (buttonIndex == 1 && [alertView textFieldAtIndex:0].text.length > 0) {
         SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
         if (alertView.tag == 1) {
-            holder.usedFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
-            holder.lastRecordDate = [NSDate date];
+            int64_t usedFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
+            [holder calibrateUsedFlow:usedFlow];
         } else if (alertView.tag == 2) {
-            holder.packageFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
+            int64_t packageFlow = [[alertView textFieldAtIndex:0].text floatValue] * 1000 * 1000;
+            [holder updatePackageFlow:packageFlow];
         }
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [self updateFlowData];
-            [holder backupToFile];
         });
     }
 }
@@ -152,11 +145,6 @@
 - (IBAction)onModifyButtonClick:(id)sender
 {
     [self alertModifyView];
-}
-
-- (void)onRefreshTimer
-{
-    [self updateFlowData];
 }
 
 @end

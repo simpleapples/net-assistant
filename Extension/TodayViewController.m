@@ -53,8 +53,7 @@
         SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
         if (holder.lastRecordDate && [SADateUtils monthWithDate:nowDate] != [SADateUtils monthWithDate:holder.lastRecordDate]
             && [nowDate timeIntervalSince1970] > [holder.lastRecordDate timeIntervalSince1970]) {
-            holder.usedFlow = 0;
-            holder.lastRecordDate = [NSDate date];
+            [holder cleanFlowOfLastMonth];
             [holder backupToFile];
         }
         [self updateNetworkFlow];
@@ -65,6 +64,7 @@
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
+        [holder recoverFromFile];
         SANetworkFlow *networkFlow = [SANetworkFlowService networkFlow];
         if (networkFlow) {
             [holder updateDataWithNetworkFlow:networkFlow];

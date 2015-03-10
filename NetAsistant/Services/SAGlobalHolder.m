@@ -9,9 +9,15 @@
 #import "SAGlobalHolder.h"
 #import "SANetworkFlow.h"
 #import "SACoreDataManager.h"
+#import "SAConvertUtils.h"
 
 @interface SAGlobalHolder ()
 
+@property (nonatomic, readwrite) int64_t packageFlow;
+@property (nonatomic, readwrite) int64_t usedFlow;
+@property (nonatomic, readwrite) int64_t remainedFlow;
+@property (nonatomic, readwrite) int64_t lastRecordFlow;
+@property (strong, nonatomic, readwrite) NSDate *lastRecordDate;
 @property (strong, nonatomic) NSArray *colorArray;
 
 @end
@@ -44,15 +50,33 @@
 
 - (void)updateDataWithNetworkFlow:(SANetworkFlow *)networkFlow
 {
-    if (networkFlow.wwanFlow >= self.lastUsedFlow) {
-        self.usedFlow = networkFlow.wwanFlow - self.lastUsedFlow + self.usedFlow;
+    int64_t increasedFlow = 0;
+    if (networkFlow.wwanFlow >= self.lastRecordFlow) {
+        increasedFlow = networkFlow.wwanFlow - self.lastRecordFlow;
+        self.usedFlow = increasedFlow + self.usedFlow;
     }
-    int64_t increasedFlow = (self.usedFlow >= self.lastUsedFlow) ? (self.usedFlow - self.lastUsedFlow) : 0;
     NSDate *nowDate = [NSDate date];
     [[SACoreDataManager manager] insertOrUpdateDetailWithFlowValue:increasedFlow date:nowDate];
-    self.lastUsedFlow = networkFlow.wwanFlow;
     self.remainedFlow = self.packageFlow - self.usedFlow;
+    self.lastRecordFlow = networkFlow.wwanFlow;
     self.lastRecordDate = nowDate;
+}
+
+- (void)updatePackageFlow:(int64_t)packageFlow
+{
+    self.packageFlow = packageFlow;
+}
+
+- (void)calibrateUsedFlow:(int64_t)usedFlow
+{
+    self.usedFlow = usedFlow;
+    self.lastRecordDate = [NSDate date];
+}
+
+- (void)cleanFlowOfLastMonth
+{
+    self.usedFlow = 0;
+    self.lastRecordDate = [NSDate date];
 }
 
 #pragma mark - Color
@@ -85,9 +109,9 @@
 {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
     [userDefaults setObject:[NSNumber numberWithLongLong:self.packageFlow] forKey:@"limitFlow"];
-    [userDefaults setObject:[NSNumber numberWithLongLong:self.lastUsedFlow] forKey:@"lastFlow"];
     [userDefaults setObject:[NSNumber numberWithLongLong:self.usedFlow] forKey:@"offsetFlow"];
     [userDefaults setObject:[NSNumber numberWithLongLong:self.remainedFlow] forKey:@"remainedFlow"];
+    [userDefaults setObject:[NSNumber numberWithLongLong:self.lastRecordFlow] forKey:@"lastFlow"];
     [userDefaults setObject:self.lastRecordDate forKey:@"lastDate"];
     [userDefaults synchronize];
 }
@@ -96,9 +120,9 @@
 {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.netasistant"];
     self.packageFlow = [[userDefaults objectForKey:@"limitFlow"] longLongValue];
-    self.lastUsedFlow = [[userDefaults objectForKey:@"lastFlow"] longLongValue];
     self.usedFlow = [[userDefaults objectForKey:@"offsetFlow"] longLongValue];
     self.remainedFlow = [[userDefaults objectForKey:@"remainedFlow"] longLongValue];
+    self.lastRecordFlow = [[userDefaults objectForKey:@"lastFlow"] longLongValue];
     self.lastRecordDate = [userDefaults objectForKey:@"lastDate"];
 }
 

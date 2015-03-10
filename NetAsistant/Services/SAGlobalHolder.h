@@ -20,15 +20,18 @@ typedef NS_OPTIONS(NSInteger, COLOR_TYPE)
 
 @interface SAGlobalHolder : NSObject
 
-@property (nonatomic) int64_t packageFlow;
-@property (nonatomic) int64_t lastUsedFlow;
-@property (nonatomic) int64_t usedFlow;
-@property (nonatomic) int64_t remainedFlow;
-@property (strong, nonatomic) NSDate *lastRecordDate;
+@property (nonatomic, readonly) int64_t packageFlow;
+@property (nonatomic, readonly) int64_t usedFlow;
+@property (nonatomic, readonly) int64_t remainedFlow;
+@property (nonatomic, readonly) int64_t lastRecordFlow;
+@property (strong, nonatomic, readonly) NSDate *lastRecordDate;
 
 + (SAGlobalHolder *)sharedSingleton;
 
 - (void)updateDataWithNetworkFlow:(SANetworkFlow *)networkFlow;
+- (void)updatePackageFlow:(int64_t)packageFlow;
+- (void)calibrateUsedFlow:(int64_t)usedFlow;
+- (void)cleanFlowOfLastMonth;
 
 - (UIColor *)colorWithType:(COLOR_TYPE)type;
 - (UIColor *)colorWithPercent:(NSInteger)percent;
