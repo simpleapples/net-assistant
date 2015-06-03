@@ -3,21 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>zh_CN</string>
+	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>上网助手</string>
+	<string>上网助手 WatchKit Extension</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIcons</key>
-	<dict/>
-	<key>CFBundleIcons~ipad</key>
-	<dict/>
 	<key>CFBundleIdentifier</key>
-	<string>com.zangzhiya.netasistant.extension</string>
+	<string>com.zangzhiya.netasistant.watchkitextension</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>上网助手</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
@@ -26,14 +22,17 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>51</string>
-	<key>LSHasLocalizedDisplayName</key>
-	<true/>
 	<key>NSExtension</key>
 	<dict>
-		<key>NSExtensionMainStoryboard</key>
-		<string>MainInterface</string>
+		<key>NSExtensionAttributes</key>
+		<dict>
+			<key>WKAppBundleIdentifier</key>
+			<string>com.zangzhiya.netasistant.watchkitapp</string>
+		</dict>
 		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.widget-extension</string>
+		<string>com.apple.watchkit</string>
 	</dict>
+	<key>RemoteInterfacePrincipalClass</key>
+	<string>InterfaceController</string>
 </dict>
 </plist>

@@ -49,7 +49,6 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDate *nowDate = [NSDate date];
         SAGlobalHolder *holder = [SAGlobalHolder sharedSingleton];
-        [holder recoverFromFile];
         if (holder.lastRecordDate && [SADateUtils monthWithDate:nowDate] != [SADateUtils monthWithDate:holder.lastRecordDate]
             && [nowDate timeIntervalSince1970] > [holder.lastRecordDate timeIntervalSince1970]) {
             [holder cleanFlowOfLastMonth];

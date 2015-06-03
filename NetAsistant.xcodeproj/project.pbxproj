@@ -27,6 +27,21 @@
 		5A451CEF19CD6DE100F21478 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A451CEE19CD6DE100F21478 /* TodayViewController.m */; };
 		5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A451CE719CD6DE100F21478 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5A4F03BB1A70CA0D0050BD32 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4F03BA1A70CA0D0050BD32 /* LaunchScreen.xib */; };
+		5A502DEB1B1DC2C900E8438D /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A502DEA1B1DC2C900E8438D /* InterfaceController.m */; };
+		5A502DEE1B1DC2C900E8438D /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A502DED1B1DC2C900E8438D /* GlanceController.m */; };
+		5A502DF01B1DC2C900E8438D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A502DEF1B1DC2C900E8438D /* Images.xcassets */; };
+		5A502DF41B1DC2C900E8438D /* 上网助手 WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 5A502DF31B1DC2C900E8438D /* 上网助手 WatchKit App.app */; };
+		5A502DFC1B1DC2C900E8438D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A502DFA1B1DC2C900E8438D /* Interface.storyboard */; };
+		5A502DFE1B1DC2C900E8438D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A502DFD1B1DC2C900E8438D /* Images.xcassets */; };
+		5A502E011B1DC2C900E8438D /* 上网助手 WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A502DE51B1DC2C900E8438D /* 上网助手 WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A502E091B1DD12200E8438D /* SAGlobalHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5341AA45C940069D40B /* SAGlobalHolder.m */; };
+		5A502E0A1B1DD1D500E8438D /* SANetworkFlowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5361AA45C940069D40B /* SANetworkFlowService.m */; };
+		5A502E0B1B1DD1DA00E8438D /* SACoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1711AAAD6C600121BF2 /* SACoreDataManager.m */; };
+		5A502E0C1B1DD1E000E8438D /* SAConvertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1761AAADC7300121BF2 /* SAConvertUtils.m */; };
+		5A502E0D1B1DD1E300E8438D /* SADateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B17A1AAADCD500121BF2 /* SADateUtils.m */; };
+		5A502E0E1B1DD1EC00E8438D /* SANetworkFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5301AA45C5F0069D40B /* SANetworkFlow.m */; };
+		5A502E0F1B1DD1F000E8438D /* SADetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B16D1AAAD67900121BF2 /* SADetail.m */; };
+		5A502E101B1DDA7700E8438D /* netasistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A40B1681AAAD61F00121BF2 /* netasistant.xcdatamodeld */; };
 		5A58F52D1AA45C440069D40B /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A58F52B1AA45C440069D40B /* libMobClickLibrary.a */; };
 		5A58F5311AA45C5F0069D40B /* SANetworkFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5301AA45C5F0069D40B /* SANetworkFlow.m */; };
 		5A58F5371AA45C940069D40B /* SAGlobalHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F5341AA45C940069D40B /* SAGlobalHolder.m */; };
@@ -67,6 +82,20 @@
 			remoteGlobalIDString = 5A451CE619CD6DE100F21478;
 			remoteInfo = Extension;
 		};
+		5A502DF51B1DC2C900E8438D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AED301919CD47F70098DC57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A502DF21B1DC2C900E8438D;
+			remoteInfo = "上网助手 WatchKit App";
+		};
+		5A502DFF1B1DC2C900E8438D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AED301919CD47F70098DC57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A502DE41B1DC2C900E8438D;
+			remoteInfo = "上网助手 WatchKit Extension";
+		};
 		5AED303B19CD47F70098DC57 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AED301919CD47F70098DC57 /* Project object */;
@@ -83,6 +112,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5A502E011B1DC2C900E8438D /* 上网助手 WatchKit Extension.appex in Embed App Extensions */,
 				5A451CF419CD6DE100F21478 /* Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -111,6 +141,18 @@
 		5A451CED19CD6DE100F21478 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		5A451CEE19CD6DE100F21478 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		5A4F03BA1A70CA0D0050BD32 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		5A502DE51B1DC2C900E8438D /* 上网助手 WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "上网助手 WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A502DE81B1DC2C900E8438D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A502DE91B1DC2C900E8438D /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		5A502DEA1B1DC2C900E8438D /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		5A502DEC1B1DC2C900E8438D /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		5A502DED1B1DC2C900E8438D /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		5A502DEF1B1DC2C900E8438D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5A502DF31B1DC2C900E8438D /* 上网助手 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "上网助手 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A502DF91B1DC2C900E8438D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A502DFB1B1DC2C900E8438D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5A502DFD1B1DC2C900E8438D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5A502E081B1DCEFC00E8438D /* 上网助手 WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "上网助手 WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		5A58F52B1AA45C440069D40B /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		5A58F52C1AA45C440069D40B /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		5A58F52F1AA45C5F0069D40B /* SANetworkFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANetworkFlow.h; sourceTree = "<group>"; };
@@ -176,6 +218,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A502DE21B1DC2C900E8438D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AED301E19CD47F70098DC57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +283,46 @@
 				5A451CEC19CD6DE100F21478 /* Info.plist */,
 				5A5C27851A5BD80600EFAA46 /* Localizable.strings */,
 				5A5C27801A5BD7A300EFAA46 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A502DE61B1DC2C900E8438D /* 上网助手 WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A502E081B1DCEFC00E8438D /* 上网助手 WatchKit Extension.entitlements */,
+				5A502DE91B1DC2C900E8438D /* InterfaceController.h */,
+				5A502DEA1B1DC2C900E8438D /* InterfaceController.m */,
+				5A502DEC1B1DC2C900E8438D /* GlanceController.h */,
+				5A502DED1B1DC2C900E8438D /* GlanceController.m */,
+				5A502DEF1B1DC2C900E8438D /* Images.xcassets */,
+				5A502DE71B1DC2C900E8438D /* Supporting Files */,
+			);
+			path = "上网助手 WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		5A502DE71B1DC2C900E8438D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A502DE81B1DC2C900E8438D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A502DF71B1DC2C900E8438D /* 上网助手 WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				5A502DFA1B1DC2C900E8438D /* Interface.storyboard */,
+				5A502DFD1B1DC2C900E8438D /* Images.xcassets */,
+				5A502DF81B1DC2C900E8438D /* Supporting Files */,
+			);
+			path = "上网助手 WatchKit App";
+			sourceTree = "<group>";
+		};
+		5A502DF81B1DC2C900E8438D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A502DF91B1DC2C900E8438D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -314,6 +403,8 @@
 			isa = PBXGroup;
 			children = (
 				5A451CEA19CD6DE100F21478 /* Extension */,
+				5A502DE61B1DC2C900E8438D /* 上网助手 WatchKit Extension */,
+				5A502DF71B1DC2C900E8438D /* 上网助手 WatchKit App */,
 				5AED308B19CD4BC40098DC57 /* Frameworks */,
 				5AED302319CD47F70098DC57 /* NetAsistant */,
 				5AED303D19CD47F70098DC57 /* NetAsistantTests */,
@@ -327,6 +418,8 @@
 				5AED302119CD47F70098DC57 /* NetAsistant.app */,
 				5AED303A19CD47F70098DC57 /* NetAsistantTests.xctest */,
 				5A451CE719CD6DE100F21478 /* Extension.appex */,
+				5A502DE51B1DC2C900E8438D /* 上网助手 WatchKit Extension.appex */,
+				5A502DF31B1DC2C900E8438D /* 上网助手 WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -412,6 +505,39 @@
 			productReference = 5A451CE719CD6DE100F21478 /* Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		5A502DE41B1DC2C900E8438D /* 上网助手 WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A502E071B1DC2C900E8438D /* Build configuration list for PBXNativeTarget "上网助手 WatchKit Extension" */;
+			buildPhases = (
+				5A502DE11B1DC2C900E8438D /* Sources */,
+				5A502DE21B1DC2C900E8438D /* Frameworks */,
+				5A502DE31B1DC2C900E8438D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A502DF61B1DC2C900E8438D /* PBXTargetDependency */,
+			);
+			name = "上网助手 WatchKit Extension";
+			productName = "上网助手 WatchKit Extension";
+			productReference = 5A502DE51B1DC2C900E8438D /* 上网助手 WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		5A502DF21B1DC2C900E8438D /* 上网助手 WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A502E061B1DC2C900E8438D /* Build configuration list for PBXNativeTarget "上网助手 WatchKit App" */;
+			buildPhases = (
+				5A502DF11B1DC2C900E8438D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "上网助手 WatchKit App";
+			productName = "上网助手 WatchKit App";
+			productReference = 5A502DF31B1DC2C900E8438D /* 上网助手 WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		5AED302019CD47F70098DC57 /* NetAsistant */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AED304419CD47F70098DC57 /* Build configuration list for PBXNativeTarget "NetAsistant" */;
@@ -426,6 +552,7 @@
 			dependencies = (
 				5A451CF319CD6DE100F21478 /* PBXTargetDependency */,
 				5A451CF619CD6DE100F21478 /* PBXTargetDependency */,
+				5A502E001B1DC2C900E8438D /* PBXTargetDependency */,
 			);
 			name = NetAsistant;
 			productName = NetAsistant;
@@ -468,6 +595,19 @@
 							};
 						};
 					};
+					5A502DE41B1DC2C900E8438D = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = LMJACF6T63;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					5A502DF21B1DC2C900E8438D = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = LMJACF6T63;
+					};
 					5AED302019CD47F70098DC57 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = LMJACF6T63;
@@ -503,6 +643,8 @@
 				5AED302019CD47F70098DC57 /* NetAsistant */,
 				5AED303919CD47F70098DC57 /* NetAsistantTests */,
 				5A451CE619CD6DE100F21478 /* Extension */,
+				5A502DE41B1DC2C900E8438D /* 上网助手 WatchKit Extension */,
+				5A502DF21B1DC2C900E8438D /* 上网助手 WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -515,6 +657,24 @@
 				5AB140B01A59258C0027C784 /* MainInterface.storyboard in Resources */,
 				5A5C277E1A5BD7A300EFAA46 /* InfoPlist.strings in Resources */,
 				5A5C27831A5BD80600EFAA46 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A502DE31B1DC2C900E8438D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A502DF01B1DC2C900E8438D /* Images.xcassets in Resources */,
+				5A502DF41B1DC2C900E8438D /* 上网助手 WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A502DF11B1DC2C900E8438D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A502DFC1B1DC2C900E8438D /* Interface.storyboard in Resources */,
+				5A502DFE1B1DC2C900E8438D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +713,23 @@
 				5A40B17F1AAAE6B900121BF2 /* SADateUtils.m in Sources */,
 				5A40B1831AAAE6C800121BF2 /* SANetworkFlowService.m in Sources */,
 				5A40B1801AAAE6BC00121BF2 /* SAConvertUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A502DE11B1DC2C900E8438D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A502E101B1DDA7700E8438D /* netasistant.xcdatamodeld in Sources */,
+				5A502E0E1B1DD1EC00E8438D /* SANetworkFlow.m in Sources */,
+				5A502E0D1B1DD1E300E8438D /* SADateUtils.m in Sources */,
+				5A502E0A1B1DD1D500E8438D /* SANetworkFlowService.m in Sources */,
+				5A502DEB1B1DC2C900E8438D /* InterfaceController.m in Sources */,
+				5A502E0B1B1DD1DA00E8438D /* SACoreDataManager.m in Sources */,
+				5A502DEE1B1DC2C900E8438D /* GlanceController.m in Sources */,
+				5A502E0F1B1DD1F000E8438D /* SADetail.m in Sources */,
+				5A502E091B1DD12200E8438D /* SAGlobalHolder.m in Sources */,
+				5A502E0C1B1DD1E000E8438D /* SAConvertUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +781,16 @@
 			target = 5A451CE619CD6DE100F21478 /* Extension */;
 			targetProxy = 5A451CF519CD6DE100F21478 /* PBXContainerItemProxy */;
 		};
+		5A502DF61B1DC2C900E8438D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A502DF21B1DC2C900E8438D /* 上网助手 WatchKit App */;
+			targetProxy = 5A502DF51B1DC2C900E8438D /* PBXContainerItemProxy */;
+		};
+		5A502E001B1DC2C900E8438D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A502DE41B1DC2C900E8438D /* 上网助手 WatchKit Extension */;
+			targetProxy = 5A502DFF1B1DC2C900E8438D /* PBXContainerItemProxy */;
+		};
 		5AED303C19CD47F70098DC57 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5AED302019CD47F70098DC57 /* NetAsistant */;
@@ -612,6 +799,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5A502DFA1B1DC2C900E8438D /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A502DFB1B1DC2C900E8438D /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		5A5C27771A5BD4E700EFAA46 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -721,6 +916,84 @@
 			};
 			name = Release;
 		};
+		5A502E021B1DC2C900E8438D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "上网助手 WatchKit Extension/上网助手 WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "上网助手 WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5A502E031B1DC2C900E8438D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "上网助手 WatchKit Extension/上网助手 WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "上网助手 WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5A502E041B1DC2C900E8438D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = "_____WatchKit_Extension";
+				INFOPLIST_FILE = "上网助手 WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		5A502E051B1DC2C900E8438D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = "_____WatchKit_Extension";
+				INFOPLIST_FILE = "上网助手 WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		5AED304219CD47F70098DC57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -805,6 +1078,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NetAsistant/Base.lproj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -826,6 +1100,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NetAsistant/Base.lproj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -881,6 +1156,24 @@
 			buildConfigurations = (
 				5A451CF719CD6DE100F21478 /* Debug */,
 				5A451CF819CD6DE100F21478 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A502E061B1DC2C900E8438D /* Build configuration list for PBXNativeTarget "上网助手 WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A502E041B1DC2C900E8438D /* Debug */,
+				5A502E051B1DC2C900E8438D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A502E071B1DC2C900E8438D /* Build configuration list for PBXNativeTarget "上网助手 WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A502E021B1DC2C900E8438D /* Debug */,
+				5A502E031B1DC2C900E8438D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
